@@ -2,6 +2,8 @@
 
 **Measuring cross-architecture stability of syscall behavioral signatures in containerized security environments.**
 
+📄 **Paper:** [Zenodo DOI 10.5281/zenodo.22701078](https://doi.org/10.5281/zenodo.22701078) — Published September 11, 2026
+
 ---
 
 ## Research Question
@@ -112,15 +114,29 @@ Results appear in `results/results.json`.
 
 ---
 
+## Results
+
+| Experiment | Accuracy | F1 | Notes |
+|---|---|---|---|
+| A: x86→x86 (baseline) | 100% | 1.00 | Same-arch, stratified split |
+| B: x86→ARM (raw features) | 50% | 0.00 | Collapses to chance cross-arch |
+| C: x86+ARM→ARM (mixed) | 0% | 0.00 | Degenerate split — excluded |
+| D: x86→ARM (normalized) | **65%** | **0.53** | Key finding — normalization helps |
+
+**Key finding:** Raw syscall frequency features fail completely cross-architecture. Abstract category normalization (file_io, network, memory, ipc, etc.) recovers 65% accuracy, confirming that workload intent is preserved across architectures even when raw syscall names diverge.
+
+---
+
 ## Status
 
 - [x] Workload suite (20 workloads)
 - [x] Strace collection pipeline
 - [x] Feature extraction (frequency, n-gram, normalized)
 - [x] Classification framework (4 experiments)
-- [ ] x86 data collected
-- [ ] ARM data collected
-- [ ] Results
+- [x] x86 data collected (15 records)
+- [x] ARM data collected (20 records)
+- [x] Results generated
+- [x] Paper published (Zenodo)
 
 ---
 
