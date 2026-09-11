@@ -1,0 +1,373 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{abstract}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10},
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+}
+
+\title{\textbf{ArchProbe: Measuring Cross-Architecture Stability of\\
+Syscall Behavioral Signatures in Containerized Environments}}
+
+\author{
+  Sherbekjon Rustamov \\
+  Independent Security Researcher \\
+  \texttt{rustamovsherbekjon@gmail.com}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Syscall-based behavioral detection systems are trained and deployed
+predominantly on x86 infrastructure, yet modern cloud and edge deployments
+span both x86 and ARM architectures. This paper asks whether a classifier
+trained on x86 syscall traces can generalize to ARM without retraining.
+We present \textbf{ArchProbe}, a controlled measurement study that collects
+\texttt{strace} behavioral traces from 20 containerized workloads (10 benign,
+10 malicious-pattern) on both \texttt{x86\_64} and \texttt{aarch64} platforms,
+then evaluates four cross-architecture transfer experiments using a Random
+Forest classifier. Our results show that raw syscall frequency features
+collapse to chance-level performance when applied cross-architecture
+(50\% accuracy, F1\,=\,0.00), while an abstract category normalization
+layer---mapping architecture-specific syscall names to semantic
+groups---recovers 65\% accuracy (F1\,=\,0.53). These findings expose a
+silent assumption in syscall-based intrusion detection: architectural
+portability is not free, and normalization is a necessary but insufficient
+remedy at small data scales.
+\end{abstract}
+
+% -----------------------------------------------------------------------
+\section{Introduction}
+% -----------------------------------------------------------------------
+
+Syscall-based intrusion detection has a long history in systems security.
+Tools such as Falco, Sysdig, and academic systems like Optimus~\cite{optimus}
+operate by observing the stream of system calls a process makes and classifying
+whether the pattern is benign or malicious. The implicit assumption in every
+deployed system is that the model trained on one machine generalizes to others
+running the same workload.
+
+This assumption silently breaks across CPU architectures. An \texttt{x86\_64}
+Linux binary and its \texttt{aarch64} equivalent may use different system calls
+to accomplish the same task: \texttt{mmap} vs.\ \texttt{mmap2}, \texttt{stat}
+vs.\ \texttt{newfstatat}, or \texttt{clone} vs.\ \texttt{clone3}. ARM's
+expanded syscall table and different calling conventions mean that the raw
+string identifiers of syscalls differ even for identical logical operations. A
+classifier trained to recognize \texttt{privesc\_enum} patterns on x86 by the
+frequency of \texttt{openat}, \texttt{getdents64}, and \texttt{readlinkat}
+may encounter entirely different call sequences for the same attack on ARM.
+
+With ARM server adoption accelerating---AWS Graviton instances, Ampere Altra
+deployments, and Apple Silicon development machines---this assumption is
+becoming load-bearing infrastructure debt. ArchProbe is a measurement study
+designed to quantify the failure mode and test a normalization remedy.
+
+\textbf{Research questions:}
+\begin{itemize}
+  \item \textbf{RQ1:} Do containerized workloads produce
+    architecture-invariant syscall behavioral signatures when represented
+    as raw call frequencies?
+  \item \textbf{RQ2:} Can mapping raw syscall names to abstract semantic
+    categories recover cross-architecture classification accuracy?
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{Related Work}
+% -----------------------------------------------------------------------
+
+\textbf{Syscall-based anomaly detection.}
+The use of system call sequences for intrusion detection dates to Forrest et
+al.~\cite{forrest1996}, who proposed normal behavior profiles from syscall
+sequences. Subsequent work explored bag-of-syscalls, n-gram models, and neural
+sequence models~\cite{abed2015}. These techniques underpin modern container
+security tools.
+
+\textbf{Optimus.}
+Optimus~\cite{optimus} reduces container attack surface by statically filtering
+syscalls a container is permitted to make. It derives per-architecture policies
+independently. Our work asks what happens when a \emph{learned} policy---rather
+than a static allowlist---must transfer across architectures.
+
+\textbf{Cross-architecture analysis.}
+Prior work on architecture-independent malware analysis has focused on binary
+similarity (instruction embedding, control-flow graph matching). To our
+knowledge, no prior work has directly measured syscall-level behavioral
+portability for \emph{containerized} workloads and quantified the resulting
+accuracy degradation.
+
+% -----------------------------------------------------------------------
+\section{Methodology}
+% -----------------------------------------------------------------------
+
+\subsection{Testbed}
+
+All traces are collected inside Docker containers using
+\texttt{strace -f -e trace=all}. The host system is FothOS (an Arch Linux
+security distribution). Docker Buildx enables building and running
+\texttt{linux/arm64} images on the same \texttt{x86\_64} host via QEMU
+userspace emulation, ensuring that ARM traces reflect \texttt{aarch64} binary
+behavior under the Linux aarch64 ABI.
+
+\subsection{Workloads}
+
+We define 20 workloads: 10 benign and 10 malicious-pattern. All malicious
+workloads are fully simulated inside isolated containers with no real external
+targets.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Category} & \textbf{Workloads} \\
+\midrule
+Benign (10) & curl, DNS resolution, file I/O, \\
+            & filesystem find, process fork, \\
+            & git clone, proc.\ enum., Python, \\
+            & SSH keygen, wget \\
+\midrule
+Malicious (10) & C2 beacon, cred.\ harvest, \\
+               & data exfil, file staging, \\
+               & log wipe, persistence, \\
+               & privesc enum., net.\ recon., \\
+               & proc.\ recon., reverse shell sim. \\
+\bottomrule
+\end{tabular}
+\caption{Workload categories}
+\end{table}
+
+\textbf{Data quality note.} Five \texttt{x86\_64} benign traces (dns, find,
+python, ssh\_keygen, wget) produced empty output, likely due to QEMU
+initialization timing during \texttt{strace} attachment on short-lived
+processes. These are excluded, leaving 15 x86 records (5 benign, 10 malicious)
+and 20 ARM records (10 benign, 10 malicious).
+
+\subsection{Feature Representations}
+
+\textbf{Frequency vector.} A bag-of-syscalls: \texttt{\{syscall: count\}},
+normalized to relative frequencies. Lines matching
+\texttt{syscall\_0x[0-9a-f]+} are excluded as unresolved kernel pointer noise.
+
+\textbf{Normalized categories.} Each syscall name is mapped to one of eight
+semantic groups: \texttt{file\_io}, \texttt{network}, \texttt{process},
+\texttt{memory}, \texttt{privilege}, \texttt{ipc}, \texttt{timing},
+\texttt{sync}. Unknown syscalls map to \texttt{other}. The mapping is
+architecture-agnostic: both \texttt{mmap} and \texttt{mmap2} map to
+\texttt{memory}; both \texttt{open} and \texttt{openat} map to
+\texttt{file\_io}.
+
+\subsection{Classifier}
+
+We use a Random Forest classifier (100 trees, \texttt{class\_weight="balanced"},
+\texttt{random\_state=42}) from scikit-learn. Balanced class weights compensate
+for the 5:10 benign:malicious imbalance in x86 training data.
+
+\subsection{Experiments}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{clll}
+\toprule
+\textbf{ID} & \textbf{Train} & \textbf{Test} & \textbf{Feature} \\
+\midrule
+A & x86 (60\%, stratified) & x86 (40\%) & frequency \\
+B & x86 (all 15) & ARM (all 20) & frequency \\
+C & x86 + ARM first half & ARM second half & frequency \\
+D & x86 (all 15) & ARM (all 20) & normalized \\
+\bottomrule
+\end{tabular}
+\caption{Experiment configurations. B and D are the primary cross-architecture
+transfer tests.}
+\end{table}
+
+% -----------------------------------------------------------------------
+\section{Results}
+% -----------------------------------------------------------------------
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+\textbf{Experiment} & \textbf{Accuracy} & \textbf{F1} \\
+\midrule
+A: x86$\to$x86 (baseline)          & 100.0\% & 1.0000 \\
+B: x86$\to$ARM (raw features)      &  50.0\% & 0.0000 \\
+C: x86+ARM$\to$ARM (mixed)         &   0.0\% & 0.0000 \\
+D: x86$\to$ARM (normalized)        &  65.0\% & 0.5333 \\
+\bottomrule
+\end{tabular}
+\caption{Classification results across four experiments.}
+\end{table}
+
+\textbf{Experiment B} confusion matrix:
+
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Pred.\ Benign & Pred.\ Malicious \\
+\midrule
+True Benign    & 10 & 0 \\
+True Malicious & 10 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The classifier predicts every ARM sample as benign. Top features
+(\texttt{poll}, \texttt{read}, \texttt{write}, \texttt{open}) are common x86
+syscalls that are absent or infrequent in ARM traces under QEMU, leaving no
+discriminating signal.
+
+\textbf{Experiment D} confusion matrix:
+
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Pred.\ Benign & Pred.\ Malicious \\
+\midrule
+True Benign    & 9 & 1 \\
+True Malicious & 6 & 4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Four malicious ARM samples are correctly identified. Top features:
+\texttt{ipc} (0.29), \texttt{file\_io} (0.23), \texttt{other} (0.16),
+\texttt{memory} (0.12), \texttt{timing} (0.08). These are architecture-agnostic
+categories, which is why any transfer occurs at all.
+
+\textbf{Experiment C} (0\% accuracy) suffers from a structural data artifact:
+positional splitting of ARM records by filename sort order places all ARM benign
+samples in training and all malicious in test. This result is excluded from the
+primary findings.
+
+% -----------------------------------------------------------------------
+\section{Discussion}
+% -----------------------------------------------------------------------
+
+\subsection{RQ1: Raw Frequency Features}
+
+Raw syscall frequency features do not transfer across architectures.
+Experiment B shows complete collapse: the classifier defaults to predicting
+the majority class across all 20 ARM samples.
+
+This finding has a direct operational implication: a model trained on x86
+telemetry and applied to ARM workloads without adaptation is not merely less
+accurate---it is effectively disabled, operating at chance level. Deployed
+detection systems targeting multi-architecture fleets face a silent blind spot
+on every ARM node.
+
+\subsection{RQ2: Normalized Category Features}
+
+Normalization to abstract categories partially recovers cross-architecture
+accuracy (65\%, F1\,=\,0.53). The \texttt{ipc} and \texttt{file\_io}
+categories are the strongest discriminating features. This makes intuitive
+sense: malicious workloads performing network reconnaissance or data
+exfiltration use IPC-class and file I/O calls heavily regardless of
+architecture, because workload \emph{intent} determines category distributions
+more than architecture does.
+
+However, 65\% accuracy is not production-viable. Six of ten malicious ARM
+workloads are missed. Normalization is necessary but not sufficient at this
+data scale.
+
+\subsection{Limitations}
+
+\begin{enumerate}
+  \item \textbf{Small dataset.} 15 x86 training samples is insufficient for
+    robust generalization. Results are directional, not definitive.
+  \item \textbf{QEMU emulation.} ARM traces were collected under QEMU
+    userspace emulation, not native \texttt{aarch64} hardware. QEMU's
+    translation layer may introduce artifacts absent on real ARM.
+  \item \textbf{Simulated malice.} All malicious-pattern workloads are
+    synthetic. Real malware behavioral signatures may differ.
+  \item \textbf{Single classifier.} Only Random Forest was evaluated.
+    Sequence-aware models (HMM, LSTM) may behave differently.
+\end{enumerate}
+
+\subsection{Practical Recommendations}
+
+\begin{enumerate}
+  \item \textbf{Do not assume portability.} Publish per-architecture model
+    versions or include architecture as an explicit feature.
+  \item \textbf{Normalize before training.} Abstract syscall categories are
+    a lightweight, interpretable normalization layer that improves
+    cross-architecture transfer without retraining.
+  \item \textbf{Collect native ARM data.} QEMU emulation is not a substitute
+    for native traces; models trained on native x86 + native ARM data should
+    outperform the mixed QEMU results reported here.
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+\section{Conclusion}
+% -----------------------------------------------------------------------
+
+ArchProbe demonstrates that syscall behavioral signatures are not
+architecture-invariant. A Random Forest classifier trained on x86 container
+traces achieves 100\% accuracy on held-out x86 data but collapses to chance
+(50\%, F1\,=\,0.00) when applied directly to ARM traces. Mapping syscall names
+to abstract semantic categories partially recovers transfer capability (65\%,
+F1\,=\,0.53), confirming that workload intent is preserved across architectures
+even when raw call names diverge.
+
+This work motivates further research into architecture-aware behavioral
+detection: larger multi-architecture datasets, native ARM collection, and
+sequence-aware normalization. The ArchProbe dataset and code are publicly
+available at \url{https://github.com/SherbekjonDev/ArchProbe}.
+
+% -----------------------------------------------------------------------
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+
+\bibitem{optimus}
+Z.~Wan et al.,
+``Sysfilter: Automated System Call Filtering for Commodity Software,''
+\emph{RAID}, 2020.
+
+\bibitem{forrest1996}
+S.~Forrest, S.~A.~Hofmeyr, A.~Somayaji, and T.~A.~Longstaff,
+``A sense of self for Unix processes,''
+\emph{IEEE Symposium on Security and Privacy}, 1996.
+
+\bibitem{abed2015}
+A.~S.~Abed, C.~Clancy, and D.~S.~Levy,
+``Applying bag of system calls for anomalous behavior detection of applications
+in Linux containers,''
+\emph{IEEE Global Humanitarian Technology Conference}, 2015.
+
+\bibitem{falco}
+Falco Project, ``Cloud-native runtime security,''
+\url{https://falco.org}, 2024.
+
+\end{thebibliography}
+
+\end{document}

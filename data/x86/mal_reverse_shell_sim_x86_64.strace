@@ -1,0 +1,273 @@
+13    syscall_0xf00008c9d800(0xf00008c9d2f0, 0xf00008c9d2f0, 0x1, 0, 0x1, 0xac) = 0x8000000a0000
+13    syscall_0xf00008c9d800(0xf00008c9d2f0, 0xf00008c9d2f0, 0x1, 0, 0xc, 0x87) = 0xeffff7df5000
+13    syscall_0x5555556c30d0(0x555555674bcf, 0x7ffffffc3070, 0x1, 0, 0x5555556c3260, 0x63) = 0x7fffff560a10
+13    syscall_0x5555556c30d0(0x555555674bcf, 0x5555556a9f3c, 0, 0, 0x7fffff560740, 0xac) = 0x7ffffffff0c8
+13    syscall_0x5555556c30d0(0x555555674bcf, 0x5555556a9f3c, 0, 0, 0x7fffff560740, 0x87) = 0x8
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86) = 0x4000000
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86) = 0x4000000
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86) = 0x4000000
+13    syscall_0x2e32997527cbac3(0x4a6184eb5290d292, 0xd2d6a5219693c4e5, 0x8eb74a527cbad2c7, 0, 0xeffff7dae000, 0xde) = 0xf00008c9d800
+13    syscall_0xeffff7dfbe00(0xeffff7dfbe16, 0x10204, 0, 0, 0xeffff7dad000, 0xde) = 0xf00008c9d800
+13    syscall_0xeffff7dfaa80(0xeffff7dfaa82, 0x10204, 0, 0, 0xeffff7dac000, 0xde) = 0xf00008c9d800
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    write(1433154320, "", 0)          = 0
+13    write(1433154320, "", 0)          = 0
+13    write(0, "", 0)                   = 0
+13    write(0, "", 0)                   = 0
+13    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0x30) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    stat("bash", {st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    stat("bash", {st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    stat(NULL, {st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    stat(NULL, {st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0x30 <unfinished ...>
+14    syscall_0xf00008c9c9b0(0xf00008c9d2f0, 0xf00008c9d2f0, 0x1, 0, 0x1, 0xac <unfinished ...>
+13    <... syscall_0xeffff7df4c31 resumed>) = 0
+14    <... syscall_0xf00008c9c9b0 resumed>) = 0x8000000a0000
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f <unfinished ...>
+14    syscall_0xf00008c9c9b0(0xf00008c9d2f0, 0xf00008c9d2f0, 0x1, 0, 0xc, 0x87 <unfinished ...>
+13    <... syscall_0xeffff7df4bb1 resumed>) = 0
+14    <... syscall_0xf00008c9c9b0 resumed>) = 0xeffff7df5000
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f <unfinished ...>
+14    read(1432832975,  <unfinished ...>
+13    <... syscall_0xeffff7df4bb1 resumed>) = 0
+14    <... read resumed>"\0@\0\0\0\0\0\0\31{g\377\377\177\0\0005\0\0\0\0\0\0\0\23\3\0\0\0\0\0\0"..., 1) = 140737477216784
+13    write(-249408, "", 0)             = 0
+14    read(1432832975,  <unfinished ...>
+13    write(-249408, "", 0 <unfinished ...>
+14    <... read resumed>"\0\1\0\0\1\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\220\33lUUU\0\0\200\0\0\0"..., 0) = 140737488351432
+13    <... write resumed>)              = 0
+13    write(0, "", 0 <unfinished ...>
+14    read(1432832975,  <unfinished ...>
+13    <... write resumed>)              = 0
+13    write(0, "", 0 <unfinished ...>
+14    <... read resumed>"\0\1\0\0\1\0\0\0", 0) = 8
+13    <... write resumed>)              = 0
+13    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0x30) = 0
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+13    stat("5", {st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+14    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+13    stat("5",  <unfinished ...>
+14    <... syscall_0x4000000 resumed>)  = 0x4000000
+13    <... stat resumed>{st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    stat(NULL,  <unfinished ...>
+14    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+13    <... stat resumed>{st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    stat(NULL,  <unfinished ...>
+14    <... syscall_0x4000000 resumed>)  = 0x4000000
+13    <... stat resumed>{st_mode=S_IFCHR|S_ISUID|S_ISVTX|0200441, st_rdev=makedev(0, 0), ...}) = 0
+13    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0x30 <unfinished ...>
+14    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+13    <... syscall_0xeffff7df4c31 resumed>) = 0
+14    <... syscall_0x4000000 resumed>)  = 0x4000000
+14    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86) = 0x4000000
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+14    syscall_0x4000000(0, 0x7fffff5a5520, 0x1, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+13    <... syscall_0x4000000 resumed>)  = 0x4000000
+14    <... syscall_0x4000000 resumed>)  = 0x4000000
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0x1, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+14    syscall_0x14000000(0, 0x7fffff5a5520, 0x5555555b2d70, 0, 0x7fffff5a5520, 0x86) = 0x14000000
+13    <... syscall_0x4000000 resumed>)  = 0x4000000
+13    syscall_0x14000000(0, 0x7fffff5a5520, 0x5555555b2d70, 0, 0x7fffff5a5520, 0x86) = 0x14000000
+13    syscall_0xeffff7dfbd20(0xeffff7dfbd34, 0x10204, 0, 0, 0xeffff7dab000, 0xde <unfinished ...>
+14    syscall_0x2ca7f2edd29fcbad(0xba53fdab2cb69e67, 0xa13a96961da9b4a7, 0xfad4b1f4a7fa194f, 0, 0xeffff7daa000, 0xde <unfinished ...>
+13    <... syscall_0xeffff7dfbd20 resumed>) = 0xf00008c9d800
+14    <... syscall_0x2ca7f2edd29fcbad resumed>) = 0xf00008c9c9b0
+13    syscall_0xeffff7df1c01(0xeffff7df1c00, 0xeffff7df1b18, 0x1, 0, 0x8000effff7df4e78, 0x38) = 0
+13    syscall_0x5555556a9f3c(0x5555556c3310, 0x5555556c3370, 0x5555556c34d0, 0, 0x1, 0x19) = 0
+13    syscall_0x5555556a9f3c(0x5555556c3310, 0x5555556c3370, 0x5555556c34d0, 0, 0x1, 0x18) = 0
+13    syscall_0x5555556a9f3c(0x5555556c3310, 0x5555556c3370, 0x5555556c34d0, 0, 0x1, 0x39) = 0
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86) = 0x4000000
+13    syscall_0x4000000(0, 0x7fffff5a5520, 0, 0, 0x7fffff5a5520, 0x86 <unfinished ...>
+14    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0xdd <unfinished ...>
+13    <... syscall_0x4000000 resumed>)  = 0x4000000
+14    <... syscall_0xeffff7df4c31 resumed>) = 0
+14    read(0, NULL, 0)                  = 8388608
+14    read(0, 0x3150, 0)                = 8388608
+14    read(0, 0x3150, 0)                = 8388608
+14    read(0, 0x3150, 0)                = 8388608
+14    read(0, 0x3150, 0)                = 8388608
+14    read(0, 0x322e6f732e3436, 3257853469259232622) = 496
+14    read(0, 0x322e6f732e3436, 3257853469259232622) = 496
+13    syscall_0x11d69d2c658cf9f(0xacb97799eb5a13c9, 0x77ac386943ac329f, 0x8c36a52fa1b536a7, 0, 0xeffff7daa000, 0xde <unfinished ...>
+14    read(0, 0x322e6f732e3436, 3257853469259232622) = 496
+13    <... syscall_0x11d69d2c658cf9f resumed>) = 0xf00008c9d800
+14    read(0, 0x322e6f732e3436, 3257853469259232622) = 496
+14    read(0, "", 3257853469259232622)  = 0
+14    read(0, NULL, 0)                  = 0
+14    read(0, NULL, 0)                  = 0
+14    read(0, NULL, 0)                  = 0
+14    read(0, NULL, 0)                  = 0
+14    read(0, NULL, 0)                  = 0
+14    read(0, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 0) = 140737490066168
+14    read(0, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 0) = 140737490066168
+14    read(0, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 0) = 140737490066168
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x2000000090, 0xb3) = 0x1c
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x8c9ebfe, 0xde) = 0x1ffe
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x8000001a0000, 0x38) = 0x1ffe
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x8000001a0000, 0x3f) = 0x1ffe
+14    write(5, 0x1999999999999999, 10)  = 10
+14    write(5, "\1", 1)                 = 18446744073709547520
+14    write(5, "\1", 1)                 = 18446744073709547520
+14    syscall_0xf00008c9d530(0xf00008c9d650, 0xf00008c9d650, 0xf00008c9d6e0, 0, 0, 0x43 <unfinished ...>
+13    syscall_0xeffff7dfa7d0(0xeffff7dfa7d2, 0x10204, 0, 0, 0xeffff7da9000, 0xde <unfinished ...>
+14    <... syscall_0xf00008c9d530 resumed>) = 0x80000000aa7e
+14    syscall_0xf00008c9d530(0xf00008c9d650, 0xf00008c9d650, 0xf00008c9d6e0, 0, 0, 0x39 <unfinished ...>
+13    <... syscall_0xeffff7dfa7d0 resumed>) = 0xf00008c9d800
+14    <... syscall_0xf00008c9d530 resumed>) = 0x80000000aa7e
+14    syscall_0xf00008c9d530(0xf00008c9d650, 0x87, 0x8000000a0000, 0, 0x8000000a0000, 0xc6) = 0x1
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0xcb) = 0x101010101010101
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0x39) = 0x101010101010101
+14    syscall_0xffffc352aba1(0xffffc352aba0, 0xffffc352aab8, 0x5a, 0, 0x80000000da0f, 0x4e) = 0
+14    syscall_0xffffc352aba1(0xffffc352aba0, 0xffffc352aab8, 0x5a, 0, 0x80000000da0f, 0x3f) = 0
+14    syscall_0xffffc352aba1(0xffffc352aba0, 0xffffc352aab8, 0x5a, 0, 0x80000000da0f, 0x50) = 0
+14    syscall_0xffffc352aba1(0xffffc352aba0, 0xffffc352aab8, 0x5a, 0, 0xf00000000000, 0xde) = 0xf00008c9d260
+14    write(0, 0x1, 35760)              = 281473958723500
+14    syscall_0xf00008c9d020(0xf00008c9d800, 0xf00008c9d800, 0xf00008c9d890, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    write(147445904, "\1\0\0\0\0\0\0\0@\321\311\10\0\360\0\0 \331\311\10\0\360\0\0\0\330\311\10\0\360\0\0"..., 263882938110272) = 281473958723500
+14    syscall_0x55555555a000(0x555555556000, 0xf00008c9d9b0, 0xf00008c9d890, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    syscall_0x55555555b000(0x55555555a000, 0xf00008c9da40, 0xf00008c9d9b0, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    syscall_0xf00008c9d890(0xf00008c9dad0, 0xf00008c9dad0, 0xf00008c9d800, 0, 0xffffc352bc88, 0xd7) = 0xffffc352bfac
+14    read(0, NULL, 0)                  = 0
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0xcb) = 0x101010101010101
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0x39 <unfinished ...>
+13    syscall_0x5555556c16a3(0x5555556c1699, 0x5555556c3df0, 0x1, 0, 0x5555556c3e50, 0xc6 <unfinished ...>
+14    <... syscall_0x101010101010101 resumed>) = 0x101010101010101
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0x38 <unfinished ...>
+13    <... syscall_0x5555556c16a3 resumed>) = 0x7fffff721ac0
+13    syscall_0xeffff7dfa820(0xeffff7dfa822, 0x700010204, 0, 0, 0xeffff7da8000, 0xde <unfinished ...>
+14    <... syscall_0x101010101010101 resumed>) = 0x101010101010101
+13    <... syscall_0xeffff7dfa820 resumed>) = 0xf00008c9d800
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0x3f <unfinished ...>
+13    syscall_0x5555556c16a3(0x5555556c1699, 0x5555556c3df0, 0x6, 0, 0x5555556c3e50, 0xcb <unfinished ...>
+14    <... syscall_0x101010101010101 resumed>) = 0x101010101010101
+13    <... syscall_0x5555556c16a3 resumed>) = 0x7fffff721ac0
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0x101010101010101, 0x50) = 0x101010101010101
+14    syscall_0x101010101010101(0x101010101010101, 0x101010101010101, 0x101010101010101, 0, 0xf00000000000, 0xde) = 0xf00008c9d770
+14    write(0, NULL, 230944)            = 281473958723500
+14    write(147445760, "\1\0\0\0\0\0\0\0@\321\311\10\0\360\0\0\220\330\311\10\0\360\0\0`\333\311\10\0\360\0\0"..., 263882938110272) = 281473958723500
+14    syscall_0xf00008c9db60(0xf00008c9dbf0, 0xf00008c9dbf0, 0xf00008c9db60, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    syscall_0x7fffffff0000(0x7ffffffc6000, 0xf00008c9dc80, 0xf00008c9dad0, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    syscall_0xf00008c9dd10(0xf00008c9dc80, 0xf00008c9dc80, 0xf00008c9dd10, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    syscall_0x800000000000(0x7fffffffc000, 0xf00008c9dda0, 0xf00008c9dad0, 0, 0xffffc352bc88, 0xd7) = 0xffffc352bfac
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x2af0, 0x39) = 0x1
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x7, 0xa3) = 0x1
+13    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f <unfinished ...>
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x800000, 0x38 <unfinished ...>
+13    <... syscall_0xeffff7df4bb1 resumed>) = 0
+14    <... syscall_0x555555554000 resumed>) = 0x1
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x800000, 0x3f) = 0x1
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x800000, 0x39) = 0x1
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0x800000, 0x116) = 0x1
+14    syscall_0x555555554000(0, 0, 0xffffc352ac40, 0, 0xffffc352bc88, 0xde) = 0xffffc352bfac
+14    write(147445760, "\1\0\0\0\0\0\0\0@\332\311\10\0\360\0\0\220\330\311\10\0\360\0\0p\327\311\10\0\360\0\0"..., 263882938112576) = 281473958723500
+13    syscall_0xeffff7dfa810(0xeffff7dfa812, 0x700010204, 0, 0, 0xeffff7da7000, 0xde <unfinished ...>
+14    syscall_0xf00008c9d890(0xf00008c9dbf0, 0xf00008c9dbf0, 0xf00008c9de30, 0, 0x8000001a5000, 0xa0 <unfinished ...>
+13    <... syscall_0xeffff7dfa810 resumed>) = 0xf00008c9d800
+14    <... syscall_0xf00008c9d890 resumed>) = 0x8000001a5000
+13    syscall_0xeffff7dfc690(0xeffff7dfc6ae, 0x10204, 0, 0, 0xeffff7da6000, 0xde) = 0xf00008c9d800
+14    poll(0xccccccccccccccc, 10, 0)    = 1 ([0xccccccccccccccc])
+13    syscall_0x7fffff779a00(0x7fffff77a600, 0x7fffff77e6a0, 0x22, 0, 0x7fffffff, 0x40 <unfinished ...>
+14    poll(0xccccccccccccccc, 10, 8)    = 6 ([0xccccccccccccccc])
+13    <... syscall_0x7fffff779a00 resumed>) = 0
+14    open("^\337R\303\377\377", O_RDONLY|O_CREAT|O_EXCL|O_NOCTTY|O_APPEND|O_NONBLOCK|__O_SYNC|O_DIRECT|O_LARGEFILE|O_NOFOLLOW|__O_TMPFILE|0xc3000028, 0157751 <unfinished ...>
+13    syscall_0x5555556c16a3(0x5555556c1699, 0x6f, 0xffffffff, 0, 0x7fffffff, 0x39 <unfinished ...>
+14    <... open resumed>)               = 263882938110560
+13    <... syscall_0x5555556c16a3 resumed>) = 0
+14    write(0, "\1\0\0\0\0\0\0\0`\322\311\10\0\360\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 263882938110560) = 263882938110560
+14    syscall_0xffffffffffffffff(0xd503201f000001b1, 0xfffffe00000001b0, 0xfffffe00000001af, 0, 0xeffff7ff8000, 0xde) = 0xf00008c9d260
+14    syscall_0xf00008c9d2f0(0xf00008c9df50, 0xf00008c9df50, 0xeffff7ff7ec0, 0, 0xeffff7ff7000, 0xde) = 0xf00008c9d260
+14    read(0, "\1\0\0\0\0\0\0\0`\322\311\10\0\360\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4294967295) = 263882938110560
+14    read(0, 0x1, 0)                   = 263882938110560
+14    write(0, "\1\0\0\0\0\0\0\0`\322\311\10\0\360\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 263882938110560) = 140737490061936
+14    write(0, "\1\0\0\0\0\0\0\0`\322\311\10\0\360\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 263882938110560) = 263882938110560
+14    write(0, "\1\0\0\0\0\0\0\0`\322\311\10\0\360\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 263882938110560) = 281473958723500
+14    write(147444320, "\1\0\0\0\0\0\0\0\20\324\311\10\0\360\0\0\360\322\311\10\0\360\0\0P\337\311\10\0\360\0\0"..., 263882938110992 <unfinished ...>
+13    syscall_0x7fffff779a00(0x7fffff77a600, 0x7fffff77e6a0, 0x3a, 0, 0x7fffffff, 0x40 <unfinished ...>
+14    <... write resumed>)              = 263882938110560
+13    <... syscall_0x7fffff779a00 resumed>) = 0
+14    syscall_0xf00008c9d2f0(0xf00008c9c0b0, 0xf00008c9c0b0, 0xf00008c9d260, 0, 0xffffc352bc88, 0xe2 <unfinished ...>
+13    syscall_0xeffff7dfa820(0xeffff7dfa822, 0x700010204, 0, 0, 0xeffff7da5000, 0xde <unfinished ...>
+14    <... syscall_0xf00008c9d2f0 resumed>) = 0xffffc352bfac
+13    <... syscall_0xeffff7dfa820 resumed>) = 0xf00008c9d800
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0xf00008c9d260, 0xf00008c9c020, 0, 0xeffff7df4eb8, 0x87) = 0x7dfa
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0xf00008c9d260, 0xf00008c9c020, 0, 0xfffffffffffffbef, 0x87) = 0x7dfa
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0xf00008c9d260, 0xf00008c9c020, 0, 0xfffffffffffffbef, 0xb2) = 0x7dfa
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0xf00008c9d260, 0xf00008c9c020, 0, 0, 0xa7) = 0x7dfa
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0x8000001a1000, 0x8000001a1000, 0, 0x1, 0x86) = 0x8000001a1000
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0, 0, 0, 0x1, 0x86) = 0
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0, 0, 0, 0x20, 0x86) = 0
+14    syscall_0xf00008c9c020(0xf00008c9d260, 0, 0, 0, 0x20, 0x86) = 0
+14    syscall_0x24a7f2879353fd7(0xa1b4d1e6625697e9, 0xeb4b4a1e4e5adaa7, 0xf2e9a9fcb1f4d4fd, 0, 0xeffff7de7000, 0xde <unfinished ...>
+13    syscall_0xeffff7dfb1c0(0xeffff7dfb1cc, 0x10204, 0, 0, 0xeffff7da4000, 0xde <unfinished ...>
+14    <... syscall_0x24a7f2879353fd7 resumed>) = 0xf00008c9d260
+13    <... syscall_0xeffff7dfb1c0 resumed>) = 0xf00008c9d800
+13    syscall_0x7fffff77ef00(0x7fffff77eee8, 0, 0x7fffff779a00, 0, 0x20, 0x5e) = ?
+13    +++ exited with 1 +++
+14    syscall_0x1696a52e52d4da9(0x6b5a5b534a5a96b1, 0xd6b536a52e52d4a5, 0x25a67fb76adb54ff, 0, 0xeffff7de6000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfcea0(0xeffff7dfcea2, 0x10204, 0, 0, 0xeffff7de5000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfb300(0xeffff7dfb302, 0x10204, 0, 0, 0xeffff7de4000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffff2e0(0, 0, 0x6fffff41, 0, 0xeffffef5, 0xa0) = 0x32
+14    syscall_0xeffff7dfcde0(0xeffff7dfce00, 0x10204, 0, 0, 0xeffff7de3000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7df4c31(0xeffff7df4c30, 0xeffff7df4b48, 0x1, 0, 0x8000001a0af8, 0x30) = 0
+14    syscall_0xeffff7dfaa60(0xeffff7dfaa62, 0x10204, 0, 0, 0xeffff7de2000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7df1c01(0xeffff7df1c00, 0xeffff7df1b18, 0x1, 0, 0x8000effff7df4e78, 0x38) = 0
+14    syscall_0xeffff7dfb630(0xeffff7dfb63e, 0x10204, 0, 0, 0xeffff7de1000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+14    syscall_0x555555554b98(0xa, 0x1, 0xffffffffffffffff, 0, 0x7fffff7c3000, 0xde) = 0xf00008c9d770
+14    syscall_0x555555554b98(0xa, 0x1, 0x7fffff7c0000, 0, 0, 0x39) = 0x2
+14    syscall_0xeffff7df1c01(0xeffff7df1c00, 0xeffff7df1b18, 0x1, 0, 0x8000effff7df4e78, 0x38) = 0
+14    poll([{fd=1651076143, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLREMOVE|POLLRDHUP|0x4800}, {fd=758396511, events=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1852255608, events=POLLIN|POLLOUT|POLLHUP|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=1932419938, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, ...], 4294717056, -250265) = 0 (Timeout)
+14    poll([{fd=1651076143, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLREMOVE|POLLRDHUP|0x4800}, {fd=758396511, events=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1852255608, events=POLLIN|POLLOUT|POLLHUP|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=1932419938, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, ...], 4294717056, -250265) = 64 ([{fd=1651076143, revents=POLLERR|POLLHUP|POLLNVAL|POLLWRBAND|POLLMSG|POLLREMOVE|POLLRDHUP}, {fd=758396511, revents=POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLMSG|POLLREMOVE|POLLRDHUP|0x4000}, {fd=1852255608, revents=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1932419938, revents=POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=1179403647, revents=POLLIN}, {fd=0, revents=POLLERR|POLLHUP|POLLNVAL}, {fd=4194311, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP}, {fd=3, revents=POLLIN|POLLOUT|POLLHUP|POLLRDNORM}, {fd=-520419882, revents=POLLIN|POLLPRI|POLLERR|POLLNVAL|POLLRDNORM|POLLRDBAND|POLLWRNORM|POLL_BUSY_LOOP|0x4800}, {fd=235537664, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=0, revents=POLLOUT|POLLNVAL|POLLRDNORM}, {fd=7078047, revents=POLLIN|POLLERR|POLLHUP|POLLNVAL|POLLRDBAND}, {fd=1245609, revents=POLLPRI|POLLOUT|POLLERR}, {fd=589838, revents=POLLPRI|POLLOUT}, {fd=189, revents=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM}, ...])
+14    poll([{fd=1651076143, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLREMOVE|POLLRDHUP|0x4800}, {fd=758396511, events=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1852255608, events=POLLIN|POLLOUT|POLLHUP|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=1932419938, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, ...], 4294717056, -251312) = 848 ([{fd=1651076143, revents=POLLERR|POLLHUP|POLLNVAL|POLLWRBAND|POLLMSG|POLLREMOVE|POLLRDHUP}, {fd=758396511, revents=POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLMSG|POLLREMOVE|POLLRDHUP|0x4000}, {fd=1852255608, revents=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1932419938, revents=POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=1179403647, revents=POLLIN}, {fd=0, revents=POLLERR|POLLHUP|POLLNVAL}, {fd=4194311, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP}, {fd=3, revents=POLLIN|POLLOUT|POLLHUP|POLLRDNORM}, {fd=-520419882, revents=POLLIN|POLLPRI|POLLERR|POLLNVAL|POLLRDNORM|POLLRDBAND|POLLWRNORM|POLL_BUSY_LOOP|0x4800}, {fd=235537664, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=0, revents=POLLOUT|POLLNVAL|POLLRDNORM}, {fd=7078047, revents=POLLIN|POLLERR|POLLHUP|POLLNVAL|POLLRDBAND}, {fd=1245609, revents=POLLPRI|POLLOUT|POLLERR}, {fd=589838, revents=POLLPRI|POLLOUT}, {fd=189, revents=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM}, ...])
+14    poll([{fd=1651076143, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLREMOVE|POLLRDHUP|0x4800}, {fd=758396511, events=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1852255608, events=POLLIN|POLLOUT|POLLHUP|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=1932419938, events=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRBAND|POLLMSG|POLLRDHUP|0x800}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, {fd=0, events=0}, ...], 4294717056, -251392) = 896 ([{fd=1651076143, revents=POLLERR|POLLHUP|POLLNVAL|POLLWRBAND|POLLMSG|POLLREMOVE|POLLRDHUP}, {fd=758396511, revents=POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLMSG|POLLREMOVE|POLLRDHUP|0x4000}, {fd=1852255608, revents=POLLOUT|POLLERR|POLLNVAL|POLLRDNORM|POLLWRNORM|POLLRDHUP|0x4800}, {fd=1932419938, revents=POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=1179403647, revents=POLLIN}, {fd=0, revents=POLLERR|POLLHUP|POLLNVAL}, {fd=4194311, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP}, {fd=3, revents=POLLIN|POLLOUT|POLLHUP|POLLRDNORM}, {fd=-520419882, revents=POLLIN|POLLPRI|POLLERR|POLLNVAL|POLLRDNORM|POLLRDBAND|POLLWRNORM|POLL_BUSY_LOOP|0x4800}, {fd=235537664, revents=POLLIN|POLLPRI|POLLOUT|POLLHUP|POLLNVAL}, {fd=0, revents=POLLOUT|POLLNVAL|POLLRDNORM}, {fd=7078047, revents=POLLIN|POLLERR|POLLHUP|POLLNVAL|POLLRDBAND}, {fd=1245609, revents=POLLPRI|POLLOUT|POLLERR}, {fd=589838, revents=POLLPRI|POLLOUT}, {fd=189, revents=POLLIN|POLLPRI|POLLOUT|POLLERR|POLLNVAL|POLLRDNORM}, ...])
+14    syscall_0xeffff7df4bb1(0xeffff7df4bb0, 0xeffff7df4ac8, 0x1, 0, 0x8000001a0af8, 0x4f) = 0
+14    syscall_0x7ffffffffb10(0xa, 0x555555554b98, 0x7ffffffff2e0, 0, 0x7fffffffff98, 0x43) = 0x40
+14    syscall_0xb8daf5a53ac71d(0x387eb18693c67db1, 0x1a4368764f87d94f, 0xc697527eb1dd2a75, 0, 0xeffff7de0000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffffb10(0x1000, 0, 0x4, 0, 0x7fffff7c0000, 0xde) = 0xf00008c9d770
+14    syscall_0x7ffffffffb10(0x7fffff597000, 0, 0x4, 0, 0, 0xe2) = 0
+14    syscall_0x7ffffffffb10(0x7fffff597000, 0x7ffffffc2688, 0x4, 0, 0, 0xde) = 0
+14    syscall_0x7ffffffffb10(0x7fffff597000, 0x7ffffffc26c0, 0x4, 0, 0, 0xde) = 0
+14    syscall_0x7ffffffffb10(0x7fffff597000, 0x7ffffffc26f8, 0x4, 0, 0, 0xde) = 0
+14    syscall_0x7ffffffffb10(0x7fffff7b3000, 0x7ffffffc26f8, 0x4, 0, 0, 0xde) = 0
+14    syscall_0x7ffffffffb10(0xc0000002, 0x7fffff597380, 0x7fffff597040, 0, 0x30, 0x39) = 0xffff800000a68cbc
+14    syscall_0xeffff7dfca20(0xeffff7dfca3c, 0x10204, 0, 0, 0xeffff7ddf000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffffb10(0x1, 0x7fffff5b53b9, 0x7fffff7b0d40, 0, 0x7fffff597000, 0xde) = 0xf00008c9d770
+14    syscall_0xeffff7dfcbe0(0xeffff7dfcbe6, 0x10204, 0, 0, 0xeffff7dde000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffff2e0(0, 0, 0x7fffff596140, 0, 0x90, 0x60) = 0x1
+14    syscall_0x7ffffffff2e0(0, 0, 0x7fffff596140, 0, 0x90, 0x63) = 0x1
+14    syscall_0xbea5d2cb2cb6a5(0xa196d43e1c653f5a, 0x4265256b61b5a184, 0xc8671b525b5a5b4b, 0, 0xeffff7ddd000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfbd30(0xeffff7dfbd46, 0x10204, 0, 0, 0xeffff7ddc000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfab40(0xeffff7dfab42, 0x10204, 0, 0, 0xeffff7ddb000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfba10(0xeffff7dfba20, 0x10204, 0, 0, 0xeffff7dda000, 0xde) = 0xf00008c9d260
+14    syscall_0x7fffff5befc8(0x7ffffffffb10, 0x7ffffffffb10, 0x7fffff597000, 0, 0, 0xe2) = 0
+14    syscall_0xeffff7dfcc80(0xeffff7dfcc86, 0x10204, 0, 0, 0xeffff7dd9000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffff2e0(0x7ffffffff2e0, 0x555555554918, 0, 0, 0, 0xe2) = 0
+14    syscall_0xeffff7dfaf10(0xeffff7dfaf18, 0x10204, 0, 0, 0xeffff7dd8000, 0xde) = 0xf00008c9d260
+14    syscall_0x7fffffffeaf0(0x7fffffffeaf0, 0, 0, 0, 0, 0xe2) = 0
+14    syscall_0x7ffffffff2e0(0x7fffff596140, 0xfffffffffffffff8, 0x7ffffffff2e0, 0, 0xf, 0x105) = 0x7ffffffc3860
+14    syscall_0xeffff7dfb0b0(0xeffff7dfb0b8, 0x10204, 0, 0, 0xeffff7dd7000, 0xde) = 0xf00008c9d260
+14    syscall_0x7ffffffff2e0(0x7fffff596140, 0xfffffffffffffff8, 0x7ffffffff2e0, 0, 0, 0xd7) = 0
+14    syscall_0xeffff7dfa7f0(0xeffff7dfa7f2, 0x500010204, 0, 0, 0xeffff7dd6000, 0xde) = 0xf00008c9d260
+14    syscall_0x23c86184e6d6b6d6(0x86d684fc6184fd4f, 0xc4fc61861861861b, 0x4e91b48c3691b4cd, 0, 0xeffff7dd5000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfd210(0xeffff7dfd232, 0x10204, 0, 0, 0xeffff7dd4000, 0xde) = 0xf00008c9d260
+14    syscall_0x55555555a14c(0, 0x7fffff7b2ca0, 0, 0, 0, 0x116) = 0x7ffffffc4908
+14    syscall_0xeffff7dfd0c0(0xeffff7dfd0e6, 0x10204, 0, 0, 0xeffff7dd3000, 0xde) = 0xf00008c9d260
+14    syscall_0x2b0(0x1000, 0x7fffff7b1ce0, 0x55555555e000, 0, 0x55555555e000, 0xa3) = 0x7fffff7b1ce0
+14    syscall_0x2b0(0x1000, 0x7fffff7b1ce0, 0x55555555e000, 0, 0, 0xde) = 0x7fffff7b1ce0
+14    syscall_0xb29fcbad69eb4a7(0xe36ddab2ca7f2eb5, 0xa7ad29f8db76acb2, 0x912a7434b1d61236, 0, 0xeffff7dd2000, 0xde) = 0xf00008c9d260
+14    syscall_0xeffff7dfa8e0(0xeffff7dfa8e2, 0x700010204, 0, 0, 0xeffff7dd1000, 0xde) = 0xf00008c9d260
+14    syscall_0x55555555d040(0x7ffffffc3b50, 0, 0x7ffffffc3b60, 0, 0, 0x73) = 0x7ffffffc3b50
+14    syscall_0xeffff7dfa8d0(0xeffff7dfa8d2, 0x700010204, 0, 0, 0xeffff7dd0000, 0xde) = 0xf00008c9d260
+14    syscall_0x7fffff7b2f00(0x7fffff7b2ee8, 0, 0x7fffff7ae600, 0, 0, 0x39) = 0x7ffffffc3b50
+14    syscall_0xeffff7dfa980(0xeffff7dfa982, 0x10204, 0, 0, 0xeffff7dcf000, 0xde) = 0xf00008c9d260
+14    syscall_0x7fffff7b2f00(0x7fffff7b2ee8, 0, 0x7fffff7ae600, 0, 0, 0x39) = 0x7ffffffc3b50
+14    syscall_0xeffff7dfd210(0xeffff7dfd234, 0x10204, 0, 0, 0xeffff7dce000, 0xde) = 0xf00008c9d260
+14    syscall_0x7fffff7b2f00(0x7fffff7b2ee8, 0, 0x7fffff7ada00, 0, 0x18, 0x5e) = ?
+14    +++ exited with 0 +++
+12    +++ exited with 1 +++

@@ -61,7 +61,9 @@ SYSCALL_CATEGORIES = {
     "futex": "sync",      "get_robust_list": "sync",
 }
 
-SYSCALL_RE = re.compile(r'^(?:\[pid\s+\d+\]\s+)?(\w+)\(')
+SYSCALL_RE = re.compile(r'^(?:\[pid\s+\d+\]\s+|\d+\s+)?(\w+)\(')
+# Unresolved kernel pointers that strace emits as syscall_0x<addr> — not real syscall names
+_UNRESOLVED_RE = re.compile(r'^syscall_0x[0-9a-f]+$', re.IGNORECASE)
 
 
 def parse_strace_file(path: str) -> list[str]:
@@ -71,7 +73,9 @@ def parse_strace_file(path: str) -> list[str]:
         for line in f:
             m = SYSCALL_RE.match(line.strip())
             if m:
-                syscalls.append(m.group(1))
+                name = m.group(1)
+                if not _UNRESOLVED_RE.match(name):
+                    syscalls.append(name)
     return syscalls
 
 

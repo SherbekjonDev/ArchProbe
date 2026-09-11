@@ -19,6 +19,7 @@ from collections import defaultdict
 try:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
+    from sklearn.model_selection import StratifiedShuffleSplit
     from sklearn.preprocessing import LabelEncoder
 except ImportError:
     print("Install scikit-learn: pip3 install scikit-learn")
@@ -57,7 +58,7 @@ def run_experiment(name: str, train_records, test_records, feature: str):
     X_train, y_train, vocab = build_matrix(train_records, feature)
     X_test, y_test, _       = build_matrix(test_records, feature, vocab)
 
-    clf = RandomForestClassifier(n_estimators=100, random_state=42)
+    clf = RandomForestClassifier(n_estimators=100, random_state=42, class_weight="balanced")
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
 
@@ -130,12 +131,14 @@ def main():
 
     results = []
 
-    # Experiment A: Train x86 → Test x86 (baseline, cross-validation style)
-    # Use first half for train, second half for test
-    mid = len(x86_records) // 2
+    # Experiment A: Train x86 → Test x86 (baseline, stratified split)
+    y_x86 = [1 if r["label"] == "malicious" else 0 for r in x86_records]
+    sss = StratifiedShuffleSplit(n_splits=1, test_size=0.4, random_state=42)
+    train_idx, test_idx = next(sss.split(x86_records, y_x86))
     results.append(run_experiment(
         "A: x86→x86 (baseline)",
-        x86_records[:mid], x86_records[mid:],
+        [x86_records[i] for i in train_idx],
+        [x86_records[i] for i in test_idx],
         feature="frequency"
     ))
 

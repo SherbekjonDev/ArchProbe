@@ -1,0 +1,586 @@
+12    execve("/usr/bin/bash", ["bash", "-c", "dd if=/dev/urandom bs=1M count=5"...], 0xffffe2d604d8 /* 6 vars */) = 0
+12    brk(NULL)                         = 0xaaaabca65000
+12    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa0118000
+12    faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=11464, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 11464, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffffa0115000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libtinfo.so.6", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=195784, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 325800, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa0096000
+12    mmap(0xffffa00a0000, 260264, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffa00a0000
+12    munmap(0xffffa0096000, 40960)     = 0
+12    munmap(0xffffa00e0000, 22696)     = 0
+12    mprotect(0xffffa00cc000, 61440, PROT_NONE) = 0
+12    mmap(0xffffa00db000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0xffffa00db000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360u\2\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1661968, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 1830504, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9fee1000
+12    mmap(0xffff9fef0000, 1764968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9fef0000
+12    munmap(0xffff9fee1000, 61440)     = 0
+12    munmap(0xffffa009f000, 3688)      = 0
+12    mprotect(0xffffa007e000, 61440, PROT_NONE) = 0
+12    mmap(0xffffa008d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0xffffa008d000
+12    mmap(0xffffa0093000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffa0093000
+12    close(3)                          = 0
+12    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa0113000
+12    set_tid_address(0xffffa01130f0)   = 12
+12    set_robust_list(0xffffa0113100, 24) = 0
+12    rseq(0xffffa01137c0, 0x20, 0, 0xd428bc00) = 0
+12    mprotect(0xffffa008d000, 16384, PROT_READ) = 0
+12    mprotect(0xffffa00db000, 16384, PROT_READ) = 0
+12    mprotect(0xaaaab32a8000, 20480, PROT_READ) = 0
+12    mprotect(0xffffa0120000, 8192, PROT_READ) = 0
+12    prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+12    munmap(0xffffa0115000, 11464)     = 0
+12    openat(AT_FDCWD, "/dev/tty", O_RDWR|O_NONBLOCK) = -1 ENXIO (No such device or address)
+12    ioctl(0, TCGETS, 0xffffcd0a0e60)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    getrandom("\x4c\x30\xdb\xd5\x79\x66\x65\xc3", 8, GRND_NONBLOCK) = 8
+12    brk(NULL)                         = 0xaaaabca65000
+12    brk(0xaaaabca86000)               = 0xaaaabca86000
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    ioctl(-1, TIOCGPGRP, 0xffffcd0a0ec4) = -1 EBADF (Bad file descriptor)
+12    sysinfo({uptime=469, loads=[72096, 43328, 20384], totalram=4181299200, freeram=2659536896, sharedram=24416256, bufferram=159744, totalswap=5255032832, freeswap=5255032832, procs=279, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+12    rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    uname({sysname="Linux", nodename="9dfb83332239", ...}) = 0
+12    newfstatat(AT_FDCWD, "/archprobe", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/archprobe", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    getpid()                          = 12
+12    getppid()                         = 9
+12    newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/sbin/bash", 0xffffcd0a0b08, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/bin/bash", 0xffffcd0a0b08, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/sbin/bash", 0xffffcd0a0b08, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/bash", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/bash", R_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/bash", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1399416, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/bash", R_OK) = 0
+12    socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+12    connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+12    close(3)                          = 0
+12    socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+12    connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=494, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=20, ...}, 0) = 0
+12    openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=494, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 494
+12    read(3, "", 4096)                 = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=494, ...}, AT_EMPTY_PATH) = 0
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=975, ...}, AT_EMPTY_PATH) = 0
+12    lseek(3, 0, SEEK_SET)             = 0
+12    read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 975
+12    close(3)                          = 0
+12    getpid()                          = 12
+12    getppid()                         = 9
+12    getpid()                          = 12
+12    getppid()                         = 9
+12    getpgid(0)                        = 1
+12    ioctl(2, TIOCGPGRP, 0xffffcd0a0d54) = -1 ENOTTY (Inappropriate ioctl for device)
+12    rt_sigaction(SIGCHLD, {sa_handler=0xaaaab31b01e0, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0
+12    ioctl(2, TIOCGPGRP, 0xffffcd0a0cf4) = -1 ENOTTY (Inappropriate ioctl for device)
+12    prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=16066, rlim_max=16066}) = 0
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    getpeername(0, 0xffffcd0a0f08, [16]) = -1 ENOTSOCK (Socket operation on non-socket)
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/sbin/dd", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/bin/dd", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/sbin/dd", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/dd", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/dd", R_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/dd", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/dd", {st_mode=S_IFREG|0755, st_size=67984, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/dd", R_OK) = 0
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [], 8) = 0
+12    clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xffffa01130f0) = 13
+12    rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+13    set_robust_list(0xffffa0113100, 24 <unfinished ...>
+12    <... rt_sigprocmask resumed>[], 8) = 0
+12    rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13    <... set_robust_list resumed>)    = 0
+12    <... rt_sigprocmask resumed>NULL, 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+12    rt_sigaction(SIGINT, {sa_handler=0xaaaab31b25e0, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    wait4(-1,  <unfinished ...>
+13    getpid()                          = 13
+13    rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+13    rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=0xaaaab31b01e0, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0
+13    openat(AT_FDCWD, "/dev/null", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+13    dup3(3, 2, 0)                     = 2
+13    close(3)                          = 0
+13    execve("/usr/bin/dd", ["dd", "if=/dev/urandom", "bs=1M", "count=5", "of=/tmp/test.bin"], 0xaaaabca712e0 /* 6 vars */) = 0
+13    brk(NULL)                         = 0xaaaafdf00000
+13    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffba8e2000
+13    faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+13    openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+13    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=11464, ...}, AT_EMPTY_PATH) = 0
+13    mmap(NULL, 11464, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffffba8df000
+13    close(3)                          = 0
+13    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+13    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360u\2\0\0\0\0\0"..., 832) = 832
+13    newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1661968, ...}, AT_EMPTY_PATH) = 0
+13    mmap(NULL, 1830504, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffba6f1000
+13    mmap(0xffffba700000, 1764968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffba700000
+13    munmap(0xffffba6f1000, 61440)     = 0
+13    munmap(0xffffba8af000, 3688)      = 0
+13    mprotect(0xffffba88e000, 61440, PROT_NONE) = 0
+13    mmap(0xffffba89d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0xffffba89d000
+13    mmap(0xffffba8a3000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffba8a3000
+13    close(3)                          = 0
+13    set_tid_address(0xffffba8e2f50)   = 13
+13    set_robust_list(0xffffba8e2f60, 24) = 0
+13    rseq(0xffffba8e3620, 0x20, 0, 0xd428bc00) = 0
+13    mprotect(0xffffba89d000, 16384, PROT_READ) = 0
+13    mprotect(0xaaaad4faf000, 4096, PROT_READ) = 0
+13    mprotect(0xffffba8ea000, 8192, PROT_READ) = 0
+13    prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+13    munmap(0xffffba8df000, 11464)     = 0
+13    rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+13    rt_sigaction(SIGUSR1, {sa_handler=0xaaaad4f93ba4, sa_mask=[INT USR1], sa_flags=0}, NULL, 8) = 0
+13    rt_sigaction(SIGINT, {sa_handler=0xaaaad4f93b94, sa_mask=[INT USR1], sa_flags=SA_NODEFER|SA_RESETHAND|0xffffffff00000000}, NULL, 8) = 0
+13    getrandom("\x5c\x06\xb7\x47\x1b\x1d\x93\x84", 8, GRND_NONBLOCK) = 8
+13    brk(NULL)                         = 0xaaaafdf00000
+13    brk(0xaaaafdf21000)               = 0xaaaafdf21000
+13    openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+13    dup3(3, 0, 0)                     = 0
+13    close(3)                          = 0
+13    lseek(0, 0, SEEK_CUR)             = 0
+13    openat(AT_FDCWD, "/tmp/test.bin", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+13    dup3(3, 1, 0)                     = 1
+13    close(3)                          = 0
+13    mmap(NULL, 1060864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffba5fd000
+13    read(0, "\26\252\202\355\301D\224\366y\203\275R\351w\263\371\204\247\\\215)x\363\310\220\264\206\227Ejee"..., 1048576) = 1048576
+13    write(1, "\26\252\202\355\301D\224\366y\203\275R\351w\263\371\204\247\\\215)x\363\310\220\264\206\227Ejee"..., 1048576) = 1048576
+13    read(0, "\353\4\327\352\277aZ\273x\304R<\265j\362)\253\352\230`4\254\302\251\225\336\235 \37\244\277\4"..., 1048576) = 1048576
+13    write(1, "\353\4\327\352\277aZ\273x\304R<\265j\362)\253\352\230`4\254\302\251\225\336\235 \37\244\277\4"..., 1048576) = 1048576
+13    read(0, "\3763\230\274\303\354t\252\36m\336\372\301\300H\205\260\342\306\342\340\201\351\271\253SI\217\346\335 \202"..., 1048576) = 1048576
+13    write(1, "\3763\230\274\303\354t\252\36m\336\372\301\300H\205\260\342\306\342\340\201\351\271\253SI\217\346\335 \202"..., 1048576) = 1048576
+13    read(0, "\27\333\366/4\217\342\343\207W\340F\275\2342\265\352;\221\264=d\276\224\314\334\204mY\\\3368"..., 1048576) = 1048576
+13    write(1, "\27\333\366/4\217\342\343\207W\340F\275\2342\265\352;\221\264=d\276\224\314\334\204mY\\\3368"..., 1048576) = 1048576
+13    read(0, "\24\346\\\357\255\177\270\322>P\355\202\243\215F\374W\342#\343\275\257\252\261\"\32\236,H\246\260x"..., 1048576) = 1048576
+13    write(1, "\24\346\\\357\255\177\270\322>P\355\202\243\215F\374W\342#\343\275\257\252\261\"\32\236,H\246\260x"..., 1048576) = 1048576
+13    close(0)                          = 0
+13    close(1)                          = 0
+13    write(2, "5+0 records in\n5+0 records out\n", 31) = 31
+13    write(2, "5242880 bytes (5.2 MB, 5.0 MiB) "..., 61) = 61
+13    write(2, "\n", 1)                 = 1
+13    close(2)                          = 0
+13    exit_group(0)                     = ?
+13    +++ exited with 0 +++
+12    <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 13
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=0xaaaab31b25e0, sa_mask=[], sa_flags=0}, 8) = 0
+12    ioctl(2, TIOCGWINSZ, 0xffffcd0a0710) = -1 ENOTTY (Inappropriate ioctl for device)
+12    rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+12    --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=13, si_uid=0, si_status=0, si_utime=0, si_stime=2} ---
+12    wait4(-1, 0xffffcd09f3e0, WNOHANG, NULL) = -1 ECHILD (No child processes)
+12    rt_sigreturn({mask=[]})           = 0
+12    newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/sbin/md5sum", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/bin/md5sum", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/sbin/md5sum", 0xffffcd0a05d8, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/md5sum", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/md5sum", R_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/md5sum", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/md5sum", {st_mode=S_IFREG|0755, st_size=35128, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/md5sum", R_OK) = 0
+12    rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [], 8) = 0
+12    clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xffffa01130f0) = 14
+12    rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+14    set_robust_list(0xffffa0113100, 24 <unfinished ...>
+12    <... rt_sigprocmask resumed>NULL, 8) = 0
+14    <... set_robust_list resumed>)    = 0
+12    rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+14    getpid()                          = 14
+12    rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+14    rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+12    <... rt_sigprocmask resumed>NULL, 8) = 0
+14    rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+14    rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    <... rt_sigprocmask resumed>[], 8) = 0
+14    rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGINT, {sa_handler=0xaaaab31b25e0, sa_mask=[], sa_flags=0},  <unfinished ...>
+14    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    <... rt_sigaction resumed>{sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+14    rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0
+12    wait4(-1,  <unfinished ...>
+14    rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=0xaaaab31b01e0, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0
+14    execve("/usr/bin/md5sum", ["md5sum", "/tmp/test.bin"], 0xaaaabca745c0 /* 6 vars */) = 0
+14    brk(NULL)                         = 0xaaaaec565000
+14    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9da78000
+14    faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+14    openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+14    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=11464, ...}, AT_EMPTY_PATH) = 0
+14    mmap(NULL, 11464, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffff9da75000
+14    close(3)                          = 0
+14    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+14    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360u\2\0\0\0\0\0"..., 832) = 832
+14    newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1661968, ...}, AT_EMPTY_PATH) = 0
+14    mmap(NULL, 1830504, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d887000
+14    mmap(0xffff9d890000, 1764968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9d890000
+14    munmap(0xffff9d887000, 36864)     = 0
+14    munmap(0xffff9da3f000, 28264)     = 0
+14    mprotect(0xffff9da1e000, 61440, PROT_NONE) = 0
+14    mmap(0xffff9da2d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0xffff9da2d000
+14    mmap(0xffff9da33000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffff9da33000
+14    close(3)                          = 0
+14    set_tid_address(0xffff9da78f50)   = 14
+14    set_robust_list(0xffff9da78f60, 24) = 0
+14    rseq(0xffff9da79620, 0x20, 0, 0xd428bc00) = 0
+14    mprotect(0xffff9da2d000, 16384, PROT_READ) = 0
+14    mprotect(0xaaaacfaf7000, 4096, PROT_READ) = 0
+14    mprotect(0xffff9da80000, 8192, PROT_READ) = 0
+14    prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+14    munmap(0xffff9da75000, 11464)     = 0
+14    getrandom("\x15\x01\xda\x15\xde\xa1\x08\x22", 8, GRND_NONBLOCK) = 8
+14    brk(NULL)                         = 0xaaaaec565000
+14    brk(0xaaaaec586000)               = 0xaaaaec586000
+14    openat(AT_FDCWD, "/tmp/test.bin", O_RDONLY) = 3
+14    fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL) = 0
+14    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5242880, ...}, AT_EMPTY_PATH) = 0
+14    read(3, "\26\252\202\355\301D\224\366y\203\275R\351w\263\371\204\247\\\215)x\363\310\220\264\206\227Ejee"..., 32768) = 32768
+14    read(3, "{\362\247\306\37P\32\266\347\0277\236\f_\244\317\206\2363\247\204\231\365M\344\35\32i\273\"\345\1"..., 32768) = 32768
+14    read(3, "\201\217\317\336\24\223\37\3457`\4\275d\"@\307\3317\366\4>\344\313&q\336/\352\206<|P"..., 32768) = 32768
+14    read(3, "\337\22\26\231\351<\21i\2010\242\340\273\314\301\2\243{\360*\344\344\325\363\271\323\207\n\235\372\253\357"..., 32768) = 32768
+14    read(3, "\332\232\272\276\360F\357(\366;\22{\6\341\7\r\215\31\262\2107\2741\24L\257\372i\"\247Q\220"..., 32768) = 32768
+14    read(3, "\344Z\305=\224~j\327\223/D\27\302\213\206\324\215\217\201&O\366\206H\t \nV\214oQ\266"..., 32768) = 32768
+14    read(3, "\34J\257\4\24007,2\242z\245\365\16W\266\35\374\363\222\375\366\204=\355\367\3270x0\356u"..., 32768) = 32768
+14    read(3, "\vu\210C\231\345VB\254\352\232\374>fH`\315K\361,\255\r\234\215,\240\353\255\6_\274\250"..., 32768) = 32768
+14    read(3, "\223\217e\337\265\224\312Yf\203{\246\"\276\304\373\6\256r\341\214\23\201\360\252IMM\24#y~"..., 32768) = 32768
+14    read(3, "\256z;\7\rp\7(#Tf\320L\314\240j\367\303\251c\267\27\226b \244\210\220\257\23\246`"..., 32768) = 32768
+14    read(3, "^\25\21\\\10\35R\305Q\2\375\25T\247\253o\333\341\223\331\366\350\363J$H76\364l\263\360"..., 32768) = 32768
+14    read(3, "\222\337>\216\f\34\357\270{_C\244P\2325\205\320 \336$=\273\254R\\\273\261\231\25\204\244\34"..., 32768) = 32768
+14    read(3, "\267\360\177\303\220\323\341AN\363{\264\347\36\253q\v\245\22\354\316\363=\2651\226\376\364\302\215\330\343"..., 32768) = 32768
+14    read(3, "\231\274\341'\252\0\340\221r\274\25\24.]\21#\342D\367_\237\213Fk8\36\v\364\22Y!V"..., 32768) = 32768
+14    read(3, "\26O\0\316p<\34\363\6\314Go\22{\214w\272\35\354B\244\216mV\272>\250A\24\366\235\341"..., 32768) = 32768
+14    read(3, "\6\306\313\270\243\252o\350!\34\235\352\350\273\33237\265\363\t\215q\306o\32ao8mWl\205"..., 32768) = 32768
+14    read(3, "\347\234s\33\305y\301\360\317\231\253\2220\346/5ro\26XD\351\231:\35_]R\327=V\206"..., 32768) = 32768
+14    read(3, "!\10Q\230L\351\t\36\307\262\255\326\301\202J\301\364Ty\264\244OnD\341;r\262\370C\v\313"..., 32768) = 32768
+14    read(3, "`\270U\224=M\227\255Xj\r|J\16\366\265\247\234\177\241\263\257\234\354\26\10\26'\20\211w\205"..., 32768) = 32768
+14    read(3, "\351\267\267l0\365!\222\322B\213ld\251H\251\325\264\273\377\35\37\372\243H\254,\322\240E\27F"..., 32768) = 32768
+14    read(3, "\255\374gRl\331{\25\232\345 n\233\363\0o,Mk\365\271\377?\336%\306\36\266\232mW\215"..., 32768) = 32768
+14    read(3, "nU\247\264\234\265F\300\214&\345Z\3409iZ/kS=)\25\327\375\332|\245\252w\231~\23"..., 32768) = 32768
+14    read(3, "\16\310$\16U\374\245\301\265\321\233\34\275_m\237\203\201\356\0f\347\375*\234i\\\377\26\341\21\220"..., 32768) = 32768
+14    read(3, "\6\7\302hb\306M\321\5\360X5\r\325\346\211\250\333 \312.\317\245\232:*\372\215)\322bM"..., 32768) = 32768
+14    read(3, "k\360\316;\17h\301\205sQ\353\34\"Z\303\f\37>\357/\206`\202\363w\252\371\24x\325\273U"..., 32768) = 32768
+14    read(3, "\205\333\367\200r_of\377\377\2\207\321\343\263P%\t\233\2642\224#\267>D\360e\221\310\374\274"..., 32768) = 32768
+14    read(3, "\311\344\2\v\3266\357\305\3668\27\266\363\1\2174\344\310\253\365\211I\217u\213^\234\32\v\303\270e"..., 32768) = 32768
+14    read(3, "h\216\v\246\311\213\250\"\342\336\24!\36\275\323\326\261\36\275\323\357z\241v\272\217\324%\3655\264\313"..., 32768) = 32768
+14    read(3, "\343\267\252\335\363`|\307\275\207\27\376\17LQ \301q\25\3\350Q\3h\321\206 7\360c\204\251"..., 32768) = 32768
+14    read(3, "[\302:\300\312\322b\34O\305\342\27\341\254\257\251\343\365\224\254\363\373H5\r2\2300\363b\224\271"..., 32768) = 32768
+14    read(3, "\257\332&\334\16\212\253+\346\231\322%\5\317u\231zLl\332\303\324\325=E3\335.\352\201\25\250"..., 32768) = 32768
+14    read(3, "\30\377\210\336k\310M\252%'\22\243t\207\27\273H\362\220u=\370\375N,&\2611\201\3169\35"..., 32768) = 32768
+14    read(3, "\353\4\327\352\277aZ\273x\304R<\265j\362)\253\352\230`4\254\302\251\225\336\235 \37\244\277\4"..., 32768) = 32768
+14    read(3, "\276|\363\266\271{\370\325y\10\312A\355\246\371\1\231*P~U+\17\2050j\254\317D\346}k"..., 32768) = 32768
+14    read(3, "`O\31\34\371\16\250\306\271\234\376HFjl\3522\212\221\301\351\237\354\17-\31\243z\27\262\3516"..., 32768) = 32768
+14    read(3, "6\342\3643)\225\36\372R\336A\2528\304\372P\316\v\315\25b\312\r\270A\214\240{7 \222K"..., 32768) = 32768
+14    read(3, "@\5-\343\324w\2\206\35{9J\33\395\3079\7S\343f\246\336\2J1\1\272<\330\207"..., 32768) = 32768
+14    read(3, "\235o\323\350\276\363\317C)\222 LZ-v\331\315\225\210\321\203\f\361\264\231aJ\356\275>kE"..., 32768) = 32768
+14    read(3, "\213\109\335\320d=\342\374\35<\334\207\33\204\336\264\244\264\231\373\246\10]\311\32\210<z\250\227\17"..., 32768) = 32768
+14    read(3, "Z\245{4E\350\32\357\316y\24\31\276/E1\3316I0\305\340x+\337\"\365\350\347R\317k"..., 32768) = 32768
+14    read(3, "\272f\345Uk\302B\245\355\r\213g\323\374\367\275}\367\16ll#M\375\340\353\205\23\317\35\257!"..., 32768) = 32768
+14    read(3, ";\354\206h\1\233%lmr\377\347\300o\2303\324Y\6\361i\315\236D\365\363bB*k\224\367"..., 32768) = 32768
+14    read(3, "\334\365\353\35 \7\\\344\335\214\377 \33\4\262\356\33\3\257 \266\t\214HR\256s\f\3320Y\231"..., 32768) = 32768
+14    read(3, "\265U\0\202\v;\361u\220%S\231\347\307\216\253\26\256\274?\344\254Iox[T\354\323\257\265\262"..., 32768) = 32768
+14    read(3, "1nG\302+\331\330\34\310\3\17\3017\347\26\264U\n\335\231\232\0\261\1P=\211h0|KR"..., 32768) = 32768
+14    read(3, "VJm\f\306\262\323\307~\274\265\222\261u!\303J\331\336.e^\241\350M\233\200\363\364\323:\300"..., 32768) = 32768
+14    read(3, "\223\332\34\306\204\307\300\17k\254\3\362\370\377\313\232\325\350\201^\304e\252h\333w\0\320\336\372\n\312"..., 32768) = 32768
+14    read(3, "!\257\250\33\271\337\273\207vE\242y\333\336\206\352\330U\277\177O\333Y\6\241\203\277\277\310\346\331\220"..., 32768) = 32768
+14    read(3, "\230\350Sa\327\f\262\245~V\256\235\246\340BNg)\250\17\201\371\321\304i)/1\24\24603"..., 32768) = 32768
+14    read(3, ",>\3367\323)\303\211\23l\357\361\3725J\333\277 \367\270\253\200T\4\v\ra\330\214\323\227\373"..., 32768) = 32768
+14    read(3, "=\305\203W8\270`\200\202j\301\2127Qw\335\255\26\301\311\321(\16\246\33D\242K:\202\34\342"..., 32768) = 32768
+14    read(3, "\322\314\215\t8M\300C\253AH\306\223\314\253\237 \246rb\377\225d\3358\350\213\340zq\266\264"..., 32768) = 32768
+14    read(3, "\200M\3\277W2\354W8o\356\264\3319\203\234l\244\24\366\202\236?\243\3538K:\317\341\264\350"..., 32768) = 32768
+14    read(3, "\t\264P:mH\3440\23\223\311\6p\3715\314\0=5\27\225\36\333\210\30\206[)\375\261)4"..., 32768) = 32768
+14    read(3, "\344\215\211\251\337\373\223\331\265\256\333>i3\334\25\0.XS\325\364!\32\2232\2200\241\354ui"..., 32768) = 32768
+14    read(3, "\251\345\211uZ\233\202Ep\243\331\315\346\337\315\307\30I\16k\306(\320\257S\32\t\350\374\30]\203"..., 32768) = 32768
+14    read(3, "\207n\342\275\4\374F\34\24y\222\211\256fX\312U\245v\322%\220\201Jg^\274\256)\21\2\264"..., 32768) = 32768
+14    read(3, "_#{\356\264\247y\240\267=\320{\357\325\317\301O\330\33o\24\251\21\317\31\312\362\340\327\304\347J"..., 32768) = 32768
+14    read(3, "uE\210\311ia\250\233\344\342\372H!\3415@\24\24'\23\301>+\354\3360\343\305\333\276\211\354"..., 32768) = 32768
+14    read(3, "\346CWY\242\1Ii5\240\322\250\217\226\335\377W\f6Z\217\1\300\1UjB\213\22\325\7F"..., 32768) = 32768
+14    read(3, "\336\337\343\260\321\211\245h\354F\312}\30zh|\232\367\222K\354D#\236}\226h\351+\266\7&"..., 32768) = 32768
+14    read(3, "\374_\365\26\235\303\33\35\2367\323~P\264-\316\221\36ml\277d\366\356\23\303\365\35\304\35\266\260"..., 32768) = 32768
+14    read(3, "@\253\232\3'\266)\257$4k\30\271\"\222\212\252\250\246\327\5\261\320n\372\316\244\217\345\23z\306"..., 32768) = 32768
+14    read(3, "\35Um\322\33=\2701S\231\377\241\250\"\261}]V\325\257\321\4\315\236H2\335\36\"a\252\216"..., 32768) = 32768
+14    read(3, "\3763\230\274\303\354t\252\36m\336\372\301\300H\205\260\342\306\342\340\201\351\271\253SI\217\346\335 \202"..., 32768) = 32768
+14    read(3, "Ky5.\360\20G\320\36\353S,Q!\316\344{\373e\264\245\314e\353P\1\270\322\355@Z\332"..., 32768) = 32768
+14    read(3, "\354 \223C\250\34\341,D\20>\331\350\341\216\345 E\354C\231'6\0CT\324!6\\\224-"..., 32768) = 32768
+14    read(3, "\2153\314\4\212\335`\216\25~\224m7\350\271\240x!\255\36\251\244\316^\373\351\345\27\25\237x{"..., 32768) = 32768
+14    read(3, "\24\0\277\240\223:\25\10:\206\340\17=I\352\373r\366\263\345p\275\304\366\33&\306q\312\364\326\344"..., 32768) = 32768
+14    read(3, "\215E\260\312\306eeB\204C\362\36l\21Y\305\343_\341\214/4\344O\20Q\36\267I\250H\353"..., 32768) = 32768
+14    read(3, "\303\300\2030d\16\364I\263\177\203(O\212JI\2120\2R\2545\234\265D%1\254\360\304*y"..., 32768) = 32768
+14    read(3, "\265gY\312\27;\342\340vrR\35Q\215\233ZD\2017\274\37\224G\7Fw\3301\274\17\356'"..., 32768) = 32768
+14    read(3, "+\377>\24\267\232\263\264BB\300\22\325m\2234\311\246\242\236pG6\311\374Z\261\365Y\363\356\32"..., 32768) = 32768
+14    read(3, "\4R\352\220\335\314ZAP\344\0G\3767\236>\f-)\363T6H\357$\271\334\365L\375\375\371"..., 32768) = 32768
+14    read(3, "\330\321y&@/[\212\377\262YaH\356\340\21#X\317/\237\377!6\264\232<\256\353Gfe"..., 32768) = 32768
+14    read(3, "\371\241\r\2706\2023\v\177y-F>\274\351\241.\267F\215\225C+(\31\211\214\374\270$6\365"..., 32768) = 32768
+14    read(3, "{\234\316\367x\261\241\300\302I\207Xh\24\376\325le\357\325\303\347_\334\200\357.l\21\243\267}"..., 32768) = 32768
+14    read(3, "\360\352\210\347\244\352\303\367\307\263\367']\6\306\373\240\306\277\322x\215Y%e\241\250\26\266/\363\344"..., 32768) = 32768
+14    read(3, "\244\300\370\250\362\240Um\23a\334\263\205\311\314\216\267\212\352$\2\277\340\332*\255=\374c\34V+"..., 32768) = 32768
+14    read(3, "8\376\362\324\365\311\261\10@\31\26N!>\v\31\255r\23\233\224\222\34E\342\207\331\215\346&e\v"..., 32768) = 32768
+14    read(3, "\232d+\364T\305\206\334GE>^\355\240W$*\263G\206\24\244\207\24\21H){\37\230\350\23"..., 32768) = 32768
+14    read(3, "m\363\376\177\16\357\373\311r\34\340\344\200Sq\216L\267\303\243\265\361\245`V\245\331ARC\251\277"..., 32768) = 32768
+14    read(3, "\257\236\207\203\363\337K\373\374^\224m\303w\3yC\321L\205\201\10\207\16\373\212\212V|\316iP"..., 32768) = 32768
+14    read(3, "?\356)F\4\265\331\373qt\251u\27\374\"\371US\202\303_\223\216w\21g0f\274\333CU"..., 32768) = 32768
+14    read(3, "\204F\35D\242o[7B\26H\321\2203%\33\266\4\352\0\276C.)\311\313j\276[\205\304\224"..., 32768) = 32768
+14    read(3, "\215\276\371\224\243\331\361\364X\340\227F\0\307(z\365tR\210\232\252\277\361\276\323\332yn\315D\215"..., 32768) = 32768
+14    read(3, "\275\36\235\244jA\30\3\327`\264\314\224\238\204\333\256$\244\273wr\217\343^u\277\252\330p\212"..., 32768) = 32768
+14    read(3, "E8S~\367g\346\n\321q\367^\f{E}s\nP\2172{\362\363H\321\17w\353_\4j"..., 32768) = 32768
+14    read(3, "\305x\333*\375\32\373]\261P\v{\241\214LcY>\320g\254\207\177\263\302V5\256\3048%\302"..., 32768) = 32768
+14    read(3, "\n\354&OP\338\207S?3\201\212\370\34\347\320\231%\345}\237\377\36d\314\351\207\n\332\275\324"..., 32768) = 32768
+14    read(3, "\226\224\243\357\3173n\16\332\262\264*\275Y\241\222\350C\7\271\327\27{@\33\213\265\t7\202\362\274"..., 32768) = 32768
+14    read(3, "\201\27\274n\300\34h\323\1g\225$\3\2N\377\377@{\256\273\325{9\222P\367\34k\226\20\252"..., 32768) = 32768
+14    read(3, "i\215\347I\32c5\23\324/Q\21\216.\277$\263,-5\306\376U\215\227\4h\31\320\224\351\257"..., 32768) = 32768
+14    read(3, "Fn\312\316f\r\26\246\272k\231X\230\310\22/R\334M_\16\363\318\362?\246\253\266\25\267\213"..., 32768) = 32768
+14    read(3, "\310\2362\202L\241\230\4\227\3701\355\26\207[D\345\6r\350o\357W\277myy\256\351\256\354L"..., 32768) = 32768
+14    read(3, "\305-(\334\274\26\4\237\212\32\332\206B\335\270qoKK\343\226\253,\0m\374\353\230xO\241\330"..., 32768) = 32768
+14    read(3, "\27\333\366/4\217\342\343\207W\340F\275\2342\265\352;\221\264=d\276\224\314\334\204mY\\\3368"..., 32768) = 32768
+14    read(3, "4\217I\300\205Dy;B\357\357\252*gth:\240\357\260?W\262\20\320\220\265\224D\342}\200"..., 32768) = 32768
+14    read(3, "Sf\10\337\21\3659\237\322\360v\243q\26\260\3341I0q\270u>C\352\200\216\312\307U\273\202"..., 32768) = 32768
+14    read(3, "\1\37\3413\320VL\230\312(`\10WYq\257\233\346+\256/\371E\27wX^\365\354t\322c"..., 32768) = 32768
+14    read(3, "\314\243&\346\214\223\307\214ma\225\246\222\23s\\\334\274\216m\315p\310\366lk\303\306\243\263%X"..., 32768) = 32768
+14    read(3, "\307\363s\247\34}\240\304O\252k.U\243c\35*\241y8\335m\316\354\275\340&v&*?["..., 32768) = 32768
+14    read(3, "W[\344\342\321\256\23774o{8\370\225\222\326u\341\32\245\366d\230r\204\223r\320\376\1W\357"..., 32768) = 32768
+14    read(3, "q\231\334{\302\221\373\256\16\346\241$\253\177\214o{#\234\316\27\234\256\33\207\315\270\360\316\225\226\306"..., 32768) = 32768
+14    read(3, "\372\257<C\352\30\3662\274\236[;\341\363\234s\317\274\31k\305\337\330\21\267=\345\217 z\352\235"..., 32768) = 32768
+14    read(3, "\35\34\t(\210\35\213q\331.\361C\366\357E\334\27=\21w\307\20\ti\366\274\237\20\241\244\327\22"..., 32768) = 32768
+14    read(3, "\2033w=\27;\324\350\277}\251Q^_\24\1773\316wC\362\237-\314\276:k\242\302\235IQ"..., 32768) = 32768
+14    read(3, "\n\7|oa\364\312\3<\6i{UO\306\266\266\230\0016\243\372\257\270)\355P\237p\371\307)"..., 32768) = 32768
+14    read(3, "\300\256u\210T\22\"\370\330zh\23]\375\231b\241\351\260\3038\210xhBY\33o\207F5\207"..., 32768) = 32768
+14    read(3, "\210$A\26\354z\360\272\f~T\177ZAM(*\f\317\nt\331e\375\375llU\323uC\177"..., 32768) = 32768
+14    read(3, "\0\6\252e\2\205\331\352i\352GW\35\324\316\254\232\26\315YA:\356\313&z\256\373\255\364\205z"..., 32768) = 32768
+14    read(3, "\313\245\340X\353\321m8\307\372\326$\356\f\264\306\312\"\274\260r\6~:\253\31\350\7V\273@j"..., 32768) = 32768
+14    read(3, "\33%\316\24\2351\303\2545W\254QyT\22c\274/\32\322\245{Q\304\2\317c\314J\22\236\300"..., 32768) = 32768
+14    read(3, "\232\243m\271\3049P\321\362\227\304\266\303D\rxh\0\246u\3641\240\260\312\t\356q\360\21\351#"..., 32768) = 32768
+14    read(3, "\350\325\r0\221\332d\300av\214\272\213\347\213\342\377}8l\221\20\347\347{E\200\362\243z\33}"..., 32768) = 32768
+14    read(3, "j\v\277\236\325&\254\323\3163\335;P\271\17f\370v5\310\333c3\3:t.rZW\265\232"..., 32768) = 32768
+14    read(3, "\315\207\273D9\203\253\242N\20\v\305\"\353?\236\241`\335\275\264\272n\266\22\341\270\221h}\20x"..., 32768) = 32768
+14    read(3, "f\320X\30jT,(V\253E\23Q\2\0\355\3\374\342\324\265\273\262y\322?/>\366i$\262"..., 32768) = 32768
+14    read(3, "\366M\37\302@As\317\22\370\236\237\327\2232P\33\23\377x\277\33\1\331\313\212\353\335\356p\v%"..., 32768) = 32768
+14    read(3, "\0\314\3444k\346\334\214\313x\4!u\344%`#L\244\334\231\232x\201PY,\3667\251s1"..., 32768) = 32768
+14    read(3, "\25\241\331\304\210\211\336pQ\2\262T_\352\222\226\5]\37L\246\344\367\205\255W\345\0075+\243\21"..., 32768) = 32768
+14    read(3, "\232d~@\270[\33\301Y\177\250>_\252\372#N|\251\243y\314\342\302\221\211\35rd\344\16\236"..., 32768) = 32768
+14    read(3, "\34\311v?\230\237\32\205\2706\304$\313\210\274\237H7p\200dT~\210\0\270\210MG\10I5"..., 32768) = 32768
+14    read(3, "\304\36\34\244\220\365.\225t\222\23\344\24\214\330\360.\223\27\2\277UN\23Q\325\351\306\375\312B\201"..., 32768) = 32768
+14    read(3, "/\27\35h\254\264d\360m\362<\22\330z\26\7\362\366\341x\222\tS\261h\371\265\305\203Q\6\264"..., 32768) = 32768
+14    read(3, "\264\335\231\255h\266X\230\2237y\302\274\345\372?F\330\0\305\342\304i<e\215\216\216=-\31\340"..., 32768) = 32768
+14    read(3, "\169\220\371\203e\f\5\35\363|\352\264w\20\355\\\222\246\365h\32\16C\32\205\366\366\1o)'"..., 32768) = 32768
+14    read(3, "\6\314\253V\232\304\2619\2166\342\266\240\230\30\222\20\255U~4\276|\261\271\220g@\304\2544\276"..., 32768) = 32768
+14    read(3, "\24\346\\\357\255\177\270\322>P\355\202\243\215F\374W\342#\343\275\257\252\261\"\32\236,H\246\260x"..., 32768) = 32768
+14    read(3, "h\315\3035\"y\217\263\240\0\3669\224\226\231(\207\276\v\371\232;\303\31[\373\255S\264\311\217\303"..., 32768) = 32768
+14    read(3, "\201\372\341|\234\242m\315\272\244\226\307c\340\30\365\315j\363\223\216i\262\4\v\366/\3165O\235\25"..., 32768) = 32768
+14    read(3, "\213\356\351\364\240\363=E\326\361d\256d\345P\305\233V\364\205\370'[N\256\213\222M\321\377a\37"..., 32768) = 32768
+14    read(3, "\270V\273\373\37\252\331+\351\306o(\312w\377\377\217\311\213L\222\17\236\221\326\346\203R\246\\a\364"..., 32768) = 32768
+14    read(3, "w\3119j\313\2344\374N\316\345\340n\306:\2729\312ZpR\367\214v\333G@F\361'\0337"..., 32768) = 32768
+14    read(3, ":\323\374_\370\16\3463\375SU\236m\v>6\t\35\377)\250\342\225\257y\317\321b \3x@"..., 32768) = 32768
+14    read(3, "\32\217>\360\363\t\206\205\265\247\177+\35KF\4\7\260\376\f\345\354\n\250-\337c\314\35_\205\n"..., 32768) = 32768
+14    read(3, ",\34\2149\275w\342D\232\257\321\243\264`9\177\177\262$f\313\6\177?j\201\25\347\211\10!Z"..., 32768) = 32768
+14    read(3, "\341\336\270\0\247m;[\2237\10\300\233p\266\371@\336\371x\316l\346\r27\334\210\26\351M\340"..., 32768) = 32768
+14    read(3, "\256\f\334\224-\205?\313';\352\1\237\3\201\365\322\t\250X\264o\225?\33\23\1I\337\253\303\242"..., 32768) = 32768
+14    read(3, "\330T\n\344\250\26\3773\3178\247\342\261x\217\4\325\240\322\223\303\277\247B\337\2240.\302~\363\207"..., 32768) = 32768
+14    read(3, "J\332\356\35z\202\267\256|\332^\237\273\350\275\212|\1\n\206\255\273\331\366\276\336\367g\10\225To"..., 32768) = 32768
+14    read(3, "\260<\35t\247\235u\311\253\17\375\244\357\375\343\332\216\300\223\361M\233\362\345j\32\267\6\17\2331\32"..., 32768) = 32768
+14    read(3, "7Z)\2132\232'\205\207\22\367\2%\324$c4\243\366y\f\f\27p\370\33\10d7\317\306<"..., 32768) = 32768
+14    read(3, "\223\231\322q\204\374\267Nte\320\7Q\262X\370]\316\261\215;+Wt&\236\301Y\32\323.\6"..., 32768) = 32768
+14    read(3, "J\226\261\232\246\347\376\t\244D\270\37\311Mo\365'?\331\271\277$\370\\\1\370\277\342\21h\220\3"..., 32768) = 32768
+14    read(3, "a\f\357\3\273k\342N\361\327J{?\354v\343\252\206\323\331CT>\324\311u\262\300T\324|S"..., 32768) = 32768
+14    read(3, "@V\21{\301\232\232\366\335|\233\363\324V\257/\261\337\17\27t\240\304\312\213\7D~e\252\252\204"..., 32768) = 32768
+14    read(3, "\266\237\225\351f\273\32a\6\17\276?\220@\367L\224!\37\271m\332\266\204 \2327\257M\256\366\360"..., 32768) = 32768
+14    read(3, "{\333R\362\242\202\367Z\305\6\215\203\34\311\344K#\256\5\333\276\214\177\215\224\211\33>_D\36\315"..., 32768) = 32768
+14    read(3, "\201OK\362\333V\0107D\317\237\r\222\275\200\344\321b\225\27I\232\306-\346-\32\344p\233v\343"..., 32768) = 32768
+14    read(3, "[m\34\251\10\235\205\352\276\202I\312|\3700\326V\372\264\362\36\256\374\1\3\207\371\0220*\26a"..., 32768) = 32768
+14    read(3, "\33\360\370\6r\251\341\20\"uB\307I\242\270.\266L\201>\25\231p)\16\17[Ee\360N\26"..., 32768) = 32768
+14    read(3, "\244\310\331;>\363\317\277q\265\264P\21\226\326M\320\3065\353\2029\363p\200(\"\216r\237\213N"..., 32768) = 32768
+14    read(3, "\214\0\33.>+\231BS\214b?\r\v\320\252\270\3.\212\320\361\5\322u\2\24\213\26\2610,"..., 32768) = 32768
+14    read(3, "\r}z<\305\3108\306\367M\10\356s\236\204\31\274\303\263\360^\256\320-\21\326\321\366\273u\343\240"..., 32768) = 32768
+14    read(3, "&\301\276)D(Buh\310\265\7\247\36(Z\3\300\244\351\356\3Pq\22\3611\2301\264\234\263"..., 32768) = 32768
+14    read(3, "?z=^f!\36dd\245\314\25\27\233\323\366\27\277\247\241O\302\3170\16\331\r\344\300\23\326\352"..., 32768) = 32768
+14    read(3, "\375,\250\220\10F\331;\322q\312t\340\321Q\365\312q\350n\263 #4\36\r\256\302\345\325\260\203"..., 32768) = 32768
+14    read(3, "\2611\334\256V\217\7\205en\231YV\262\306{!\343`\34\32\312g\2\213Qy\251\267;P\2"..., 32768) = 32768
+14    read(3, "\251\264\321\2052\326\251EV\361\0233d\340Z+\6\212W\341+\223\340^+a\177\346\6`\222\340"..., 32768) = 32768
+14    read(3, "", 32768)                = 0
+14    lseek(3, 0, SEEK_CUR)             = 5242880
+14    close(3)                          = 0
+14    newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+14    write(1, "59ab65577ef521a1be06cb202c769053"..., 48) = 48
+14    close(1)                          = 0
+14    close(2)                          = 0
+14    exit_group(0)                     = ?
+14    +++ exited with 0 +++
+12    <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 14
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=0xaaaab31b25e0, sa_mask=[], sa_flags=0}, 8) = 0
+12    ioctl(2, TIOCGWINSZ, 0xffffcd0a0710) = -1 ENOTTY (Inappropriate ioctl for device)
+12    rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+12    --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=14, si_uid=0, si_status=0, si_utime=1, si_stime=0} ---
+12    wait4(-1, 0xffffcd09f3e0, WNOHANG, NULL) = -1 ECHILD (No child processes)
+12    rt_sigreturn({mask=[]})           = 0
+12    newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0755, st_size=30, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/sbin/rm", 0xffffcd0a0738, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/bin/rm", 0xffffcd0a0738, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/sbin/rm", 0xffffcd0a0738, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/rm", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/rm", R_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/rm", X_OK) = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/rm", {st_mode=S_IFREG|0755, st_size=51560, ...}, 0) = 0
+12    geteuid()                         = 0
+12    getegid()                         = 0
+12    getuid()                          = 0
+12    getgid()                          = 0
+12    faccessat(AT_FDCWD, "/usr/bin/rm", R_OK) = 0
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=0xaaaab31b01e0, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0
+12    execve("/usr/bin/rm", ["rm", "/tmp/test.bin"], 0xaaaabca745c0 /* 6 vars */) = 0
+12    brk(NULL)                         = 0xaaab204d4000
+12    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffb3390000
+12    faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=11464, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 11464, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffffb338d000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360u\2\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1661968, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 1830504, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffb319f000
+12    mmap(0xffffb31a0000, 1764968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffffb31a0000
+12    munmap(0xffffb319f000, 4096)      = 0
+12    munmap(0xffffb334f000, 61032)     = 0
+12    mprotect(0xffffb332e000, 61440, PROT_NONE) = 0
+12    mmap(0xffffb333d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0xffffb333d000
+12    mmap(0xffffb3343000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffb3343000
+12    close(3)                          = 0
+12    set_tid_address(0xffffb3390f50)   = 12
+12    set_robust_list(0xffffb3390f60, 24) = 0
+12    rseq(0xffffb3391620, 0x20, 0, 0xd428bc00) = 0
+12    mprotect(0xffffb333d000, 16384, PROT_READ) = 0
+12    mprotect(0xaaaae4f2b000, 4096, PROT_READ) = 0
+12    mprotect(0xffffb3398000, 8192, PROT_READ) = 0
+12    prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+12    munmap(0xffffb338d000, 11464)     = 0
+12    getrandom("\x00\x27\x7b\x62\xce\xdb\xca\x13", 8, GRND_NONBLOCK) = 8
+12    brk(NULL)                         = 0xaaab204d4000
+12    brk(0xaaab204f5000)               = 0xaaab204f5000
+12    ioctl(0, TCGETS, 0xfffffbdfe970)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    newfstatat(AT_FDCWD, "/tmp/test.bin", {st_mode=S_IFREG|0644, st_size=5242880, ...}, AT_SYMLINK_NOFOLLOW) = 0
+12    unlinkat(AT_FDCWD, "/tmp/test.bin", 0) = 0
+12    lseek(0, 0, SEEK_CUR)             = 0
+12    close(0)                          = 0
+12    close(1)                          = 0
+12    close(2)                          = 0
+12    exit_group(0)                     = ?
+12    +++ exited with 0 +++

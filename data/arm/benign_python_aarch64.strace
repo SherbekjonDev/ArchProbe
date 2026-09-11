@@ -1,0 +1,1429 @@
+12    execve("/usr/bin/python3", ["python3", "-c", "import os,sys; [os.getpid() for "...], 0xffffe5449978 /* 6 vars */) = 0
+12    brk(NULL)                         = 0xaaaad70fb000
+12    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d7a9000
+12    faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=11464, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 11464, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffff9d7a6000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=551064, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 680048, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d6d0000
+12    mmap(0xffff9d6d0000, 614512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9d6d0000
+12    munmap(0xffff9d767000, 61552)     = 0
+12    mprotect(0xffff9d756000, 61440, PROT_NONE) = 0
+12    mmap(0xffff9d765000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x85000) = 0xffff9d765000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=170072, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 299192, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d686000
+12    mmap(0xffff9d690000, 233656, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9d690000
+12    munmap(0xffff9d686000, 40960)     = 0
+12    munmap(0xffff9d6ca000, 20664)     = 0
+12    mprotect(0xffff9d6b7000, 65536, PROT_NONE) = 0
+12    mmap(0xffff9d6c7000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0xffff9d6c7000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=104608, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 233648, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d656000
+12    mmap(0xffff9d660000, 168112, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9d660000
+12    munmap(0xffff9d656000, 40960)     = 0
+12    munmap(0xffff9d68a000, 20656)     = 0
+12    mprotect(0xffff9d678000, 65536, PROT_NONE) = 0
+12    mmap(0xffff9d688000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18000) = 0xffff9d688000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+12    read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360u\2\0\0\0\0\0"..., 832) = 832
+12    newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1661968, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 1830504, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d4a1000
+12    mmap(0xffff9d4b0000, 1764968, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff9d4b0000
+12    munmap(0xffff9d4a1000, 61440)     = 0
+12    munmap(0xffff9d65f000, 3688)      = 0
+12    mprotect(0xffff9d63e000, 61440, PROT_NONE) = 0
+12    mmap(0xffff9d64d000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18d000) = 0xffff9d64d000
+12    mmap(0xffff9d653000, 48744, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffff9d653000
+12    close(3)                          = 0
+12    mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d7a4000
+12    set_tid_address(0xffff9d7a44f0)   = 12
+12    set_robust_list(0xffff9d7a4500, 24) = 0
+12    rseq(0xffff9d7a4bc0, 0x20, 0, 0xd428bc00) = 0
+12    mprotect(0xffff9d64d000, 16384, PROT_READ) = 0
+12    mprotect(0xffff9d688000, 4096, PROT_READ) = 0
+12    mprotect(0xffff9d6c7000, 8192, PROT_READ) = 0
+12    mprotect(0xffff9d765000, 4096, PROT_READ) = 0
+12    mprotect(0xaaaac0d46000, 28672, PROT_READ) = 0
+12    mprotect(0xffff9d7b1000, 8192, PROT_READ) = 0
+12    prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+12    munmap(0xffff9d7a6000, 11464)     = 0
+12    getrandom("\x40\x53\x54\x23\xcc\x43\x76\xc9", 8, GRND_NONBLOCK) = 8
+12    brk(NULL)                         = 0xaaaad70fb000
+12    brk(0xaaaad711c000)               = 0xaaaad711c000
+12    openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=353616, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 353616, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffff9d459000
+12    close(3)                          = 0
+12    openat(AT_FDCWD, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27004, ...}, AT_EMPTY_PATH) = 0
+12    mmap(NULL, 27004, PROT_READ, MAP_SHARED, 3, 0) = 0xffff9d770000
+12    close(3)                          = 0
+12    futex(0xffff9d65289c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+12    getrandom("\x16\xd5\xa2\x6b\x2e\x78\x70\xbf\x85\x3d\x19\xfc\xd0\x9a\x2d\x34\x4c\x3f\xe3\x08\x05\xc9\xc8\x35", 24, GRND_NONBLOCK) = 24
+12    mmap(NULL, 1048576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d359000
+12    mmap(NULL, 266240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d318000
+12    mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d2f7000
+12    brk(0xaaaad713d000)               = 0xaaaad713d000
+12    brk(0xaaaad715f000)               = 0xaaaad715f000
+12    newfstatat(AT_FDCWD, "/usr/local/sbin/python3", 0xffffd2ab1000, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/bin/python3", 0xffffd2ab1000, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/sbin/python3", 0xffffd2ab1000, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/python3", {st_mode=S_IFREG|0755, st_size=5684392, ...}, 0) = 0
+12    readlinkat(AT_FDCWD, "/usr/bin/python3", "python3.10", 4096) = 10
+12    readlinkat(AT_FDCWD, "/usr/bin/python3.10", 0xffffd2aabde0, 4096) = -1 EINVAL (Invalid argument)
+12    openat(AT_FDCWD, "/usr/bin/pyvenv.cfg", O_RDONLY) = -1 ENOENT (No such file or directory)
+12    openat(AT_FDCWD, "/usr/pyvenv.cfg", O_RDONLY) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/Modules/Setup.local", 0xffffd2aacdb0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/lib/python3.10/os.py", 0xffffd2aacca0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/lib/python3.10/os.pyc", 0xffffd2aacca0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/os.py", {st_mode=S_IFREG|0644, st_size=39557, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/bin/pybuilddir.txt", O_RDONLY) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/bin/lib/python3.10/lib-dynload", 0xffffd2aabe30, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", {st_mode=S_IFDIR|0755, st_size=3900, ...}, 0) = 0
+12    mmap(NULL, 1048576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d1f7000
+12    sysinfo({uptime=468, loads=[72096, 43328, 20384], totalram=4181299200, freeram=2667642880, sharedram=24428544, bufferram=159744, totalswap=5255032832, freeswap=5255032832, procs=279, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+12    openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+12    brk(0xaaaad7180000)               = 0xaaaad7180000
+12    newfstatat(AT_FDCWD, "/usr/lib/python310.zip", 0xffffd2aaf610, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib", {st_mode=S_IFDIR|0755, st_size=336, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python310.zip", 0xffffd2aaf3a0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4148, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad715f3a0 /* 205 entries */, 32768) = 6864
+12    getdents64(3, 0xaaaad715f3a0 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/__init__.cpython-310-aarch64-linux-gnu.so", 0xffffd2aaf7c0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/__init__.abi3.so", 0xffffd2aaf7c0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/__init__.so", 0xffffd2aaf7c0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5620, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5620, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/encodings/__pycache__/__init__.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    fcntl(3, F_GETFD)                 = 0x1 (flags FD_CLOEXEC)
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3875, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aaf990)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3875, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\364\25\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 3876) = 3875
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/codecs.py", {st_mode=S_IFREG|0644, st_size=36714, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/codecs.py", {st_mode=S_IFREG|0644, st_size=36714, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/codecs.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=33219, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aaeae0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=33219, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059jj\217\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 33220) = 33219
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings", {st_mode=S_IFDIR|0755, st_size=2620, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings", {st_mode=S_IFDIR|0755, st_size=2620, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings", {st_mode=S_IFDIR|0755, st_size=2620, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/encodings", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=2620, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad716dd50 /* 125 entries */, 32768) = 4224
+12    getdents64(3, 0xaaaad716dd50 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15677, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15677, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/encodings/__pycache__/aliases.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=10921, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aae3d0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=10921, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j==\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 10922) = 10921
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings", {st_mode=S_IFDIR|0755, st_size=2620, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/encodings/__pycache__/utf_8.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1597, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aafa10)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1597, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\355\3\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 1598) = 1597
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGXFSZ, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTRAP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGFPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGKILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGUSR1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGUSR2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, 8) = 0
+12    rt_sigaction(SIGALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGSTKFLT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGCONT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGSTOP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTSTP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGTTOU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGURG, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, 8) = 0
+12    rt_sigaction(SIGVTALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGPROF, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGWINCH, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGPWR, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_2, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_3, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_4, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_5, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_6, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_7, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_8, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_9, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_10, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_11, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_12, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_13, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_14, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_15, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_16, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_17, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_18, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_19, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_20, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_21, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_22, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_23, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_24, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_25, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_26, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_27, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_28, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_29, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_30, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_31, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGRT_32, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    rt_sigaction(SIGINT, {sa_handler=0xaaaac0a61740, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+12    newfstatat(0, "", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}, AT_EMPTY_PATH) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/io.py", {st_mode=S_IFREG|0644, st_size=4196, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/io.py", {st_mode=S_IFREG|0644, st_size=4196, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/io.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3663, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aafa90)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3663, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059jd\20\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 3664) = 3663
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/abc.py", {st_mode=S_IFREG|0644, st_size=6522, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/abc.py", {st_mode=S_IFREG|0644, st_size=6522, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/abc.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6751, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aaebe0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6751, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059jz\31\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 6752) = 6751
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    dup(0)                            = 3
+12    close(3)                          = 0
+12    newfstatat(0, "", {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}, AT_EMPTY_PATH) = 0
+12    ioctl(0, TCGETS, 0xffffd2ab0b80)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(0, 0, SEEK_CUR)             = 0
+12    ioctl(0, TCGETS, 0xffffd2ab0ed0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    dup(1)                            = 3
+12    close(3)                          = 0
+12    newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(1, TCGETS, 0xffffd2ab0b80)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(1, 0, SEEK_CUR)             = -1 ESPIPE (Illegal seek)
+12    ioctl(1, TCGETS, 0xffffd2ab0ed0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    dup(2)                            = 3
+12    close(3)                          = 0
+12    newfstatat(2, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(2, TCGETS, 0xffffd2ab0b80)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(2, 0, SEEK_CUR)             = -1 ESPIPE (Illegal seek)
+12    ioctl(2, TCGETS, 0xffffd2ab0ed0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/site.py", {st_mode=S_IFREG|0644, st_size=23667, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/site.py", {st_mode=S_IFREG|0644, st_size=23667, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/site.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=17922, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aafa90)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=17922, ...}, AT_EMPTY_PATH) = 0
+12    brk(0xaaaad71a2000)               = 0xaaaad71a2000
+12    read(3, "o\r\r\n\0\0\0\0\37\2059js\\\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 17923) = 17922
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    brk(0xaaaad719d000)               = 0xaaaad719d000
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/os.py", {st_mode=S_IFREG|0644, st_size=39557, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/os.py", {st_mode=S_IFREG|0644, st_size=39557, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/os.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=31599, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aaebe0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=31599, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\205\232\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 31600) = 31599
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    mmap(NULL, 151552, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff9d1d2000
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/stat.py", {st_mode=S_IFREG|0644, st_size=5485, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/stat.py", {st_mode=S_IFREG|0644, st_size=5485, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/stat.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4273, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aadd30)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4273, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059jm\25\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4274) = 4273
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/_collections_abc.py", {st_mode=S_IFREG|0644, st_size=32284, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/_collections_abc.py", {st_mode=S_IFREG|0644, st_size=32284, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/_collections_abc.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=32925, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aadd30)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=32925, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\34~\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 32926) = 32925
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/posixpath.py", {st_mode=S_IFREG|0644, st_size=16123, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/posixpath.py", {st_mode=S_IFREG|0644, st_size=16123, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/posixpath.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=10560, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aadd30)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=10560, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\373>\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 10561) = 10560
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/genericpath.py", {st_mode=S_IFREG|0644, st_size=4975, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/genericpath.py", {st_mode=S_IFREG|0644, st_size=4975, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/genericpath.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3907, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aace80)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3907, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059jo\23\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 3908) = 3907
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/_sitebuiltins.py", {st_mode=S_IFREG|0644, st_size=3128, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/_sitebuiltins.py", {st_mode=S_IFREG|0644, st_size=3128, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/_sitebuiltins.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3547, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aaebe0)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3547, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j8\f\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 3548) = 3547
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/bin/pyvenv.cfg", 0xffffd2aaf6b0, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/pyvenv.cfg", 0xffffd2aaf6b0, 0) = -1 ENOENT (No such file or directory)
+12    geteuid()                         = 0
+12    getuid()                          = 0
+12    getegid()                         = 0
+12    getgid()                          = 0
+12    newfstatat(AT_FDCWD, "/root/.local/lib/python3.10/site-packages", 0xffffd2aaf890, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad7187f00 /* 2 entries */, 32768) = 48
+12    getdents64(3, 0xaaaad7187f00 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=226, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=226, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad7187f00 /* 10 entries */, 32768) = 352
+12    getdents64(3, 0xaaaad7187f00 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/dist-packages", 0xffffd2aaf890, 0) = -1 ENOENT (No such file or directory)
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/__pycache__/sitecustomize.cpython-310.pyc", O_RDONLY|O_CLOEXEC) = 3
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=225, ...}, AT_EMPTY_PATH) = 0
+12    ioctl(3, TCGETS, 0xffffd2aae820)  = -1 ENOTTY (Inappropriate ioctl for device)
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    lseek(3, 0, SEEK_CUR)             = 0
+12    newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=225, ...}, AT_EMPTY_PATH) = 0
+12    read(3, "o\r\r\n\0\0\0\0\37\2059j\233\0\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 226) = 225
+12    read(3, "", 1)                    = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", {st_mode=S_IFDIR|0755, st_size=3900, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", {st_mode=S_IFDIR|0755, st_size=3900, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", {st_mode=S_IFDIR|0755, st_size=3900, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=3900, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad7187f00 /* 48 entries */, 32768) = 3072
+12    getdents64(3, 0xaaaad7187f00 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad7187f00 /* 2 entries */, 32768) = 48
+12    getdents64(3, 0xaaaad7187f00 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=226, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=226, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=226, ...}, 0) = 0
+12    openat(AT_FDCWD, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+12    newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=226, ...}, AT_EMPTY_PATH) = 0
+12    getdents64(3, 0xaaaad7187f00 /* 10 entries */, 32768) = 352
+12    getdents64(3, 0xaaaad7187f00 /* 0 entries */, 32768) = 0
+12    close(3)                          = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10", {st_mode=S_IFDIR|0755, st_size=4148, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3.10/lib-dynload", {st_mode=S_IFDIR|0755, st_size=3900, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/local/lib/python3.10/dist-packages", {st_mode=S_IFDIR|0755, st_size=0, ...}, 0) = 0
+12    newfstatat(AT_FDCWD, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=226, ...}, 0) = 0
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    getpid()                          = 12
+12    rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=0xaaaac0a61740, sa_mask=[], sa_flags=SA_ONSTACK}, 8) = 0
+12    munmap(0xffff9d1d2000, 151552)    = 0
+12    exit_group(0)                     = ?
+12    +++ exited with 0 +++

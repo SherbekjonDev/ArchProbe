@@ -1,0 +1,234 @@
+[
+  {
+    "experiment": "A: x86\u2192x86 (baseline)",
+    "feature": "frequency",
+    "train_size": 9,
+    "test_size": 6,
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "top_features": [
+      [
+        "setitimer",
+        0.1412
+      ],
+      [
+        "read",
+        0.1398
+      ],
+      [
+        "open",
+        0.1322
+      ],
+      [
+        "stat",
+        0.106
+      ],
+      [
+        "poll",
+        0.1025
+      ],
+      [
+        "write",
+        0.073
+      ],
+      [
+        "rt_sigreturn",
+        0.0408
+      ],
+      [
+        "shmctl",
+        0.0392
+      ],
+      [
+        "nanosleep",
+        0.0312
+      ],
+      [
+        "chdir",
+        0.0307
+      ]
+    ]
+  },
+  {
+    "experiment": "B: x86\u2192ARM (raw features)",
+    "feature": "frequency",
+    "train_size": 15,
+    "test_size": 20,
+    "accuracy": 0.5,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        10,
+        0
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "top_features": [
+      [
+        "poll",
+        0.1312
+      ],
+      [
+        "read",
+        0.1126
+      ],
+      [
+        "write",
+        0.0985
+      ],
+      [
+        "open",
+        0.0933
+      ],
+      [
+        "setitimer",
+        0.0656
+      ],
+      [
+        "close",
+        0.056
+      ],
+      [
+        "wait4",
+        0.0549
+      ],
+      [
+        "stat",
+        0.0444
+      ],
+      [
+        "lseek",
+        0.0422
+      ],
+      [
+        "mincore",
+        0.0221
+      ]
+    ]
+  },
+  {
+    "experiment": "C: x86+ARM\u2192ARM (mixed training)",
+    "feature": "frequency",
+    "train_size": 25,
+    "test_size": 10,
+    "accuracy": 0.0,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    "top_features": [
+      [
+        "close",
+        0.1306
+      ],
+      [
+        "open",
+        0.0839
+      ],
+      [
+        "poll",
+        0.0743
+      ],
+      [
+        "read",
+        0.056
+      ],
+      [
+        "write",
+        0.0523
+      ],
+      [
+        "brk",
+        0.0489
+      ],
+      [
+        "ioctl",
+        0.0377
+      ],
+      [
+        "stat",
+        0.0362
+      ],
+      [
+        "set_robust_list",
+        0.0355
+      ],
+      [
+        "getrandom",
+        0.0331
+      ]
+    ]
+  },
+  {
+    "experiment": "D: x86\u2192ARM (normalized categories)",
+    "feature": "normalized",
+    "train_size": 15,
+    "test_size": 20,
+    "accuracy": 0.65,
+    "f1": 0.5333,
+    "confusion_matrix": [
+      [
+        9,
+        1
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    "top_features": [
+      [
+        "ipc",
+        0.2948
+      ],
+      [
+        "file_io",
+        0.2341
+      ],
+      [
+        "other",
+        0.1629
+      ],
+      [
+        "memory",
+        0.1232
+      ],
+      [
+        "timing",
+        0.0831
+      ],
+      [
+        "process",
+        0.0577
+      ],
+      [
+        "network",
+        0.0279
+      ],
+      [
+        "privilege",
+        0.0162
+      ]
+    ]
+  }
+]
