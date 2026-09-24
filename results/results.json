@@ -1,66 +1,59 @@
 [
   {
-    "experiment": "A: x86\u2192x86 (baseline)",
+    "experiment": "A: x86\u2192x86 (baseline, LOO-CV)",
     "feature": "frequency",
-    "train_size": 9,
-    "test_size": 6,
-    "accuracy": 1.0,
-    "f1": 1.0,
-    "confusion_matrix": [
-      [
-        2,
-        0
-      ],
-      [
-        0,
-        4
-      ]
-    ],
+    "method": "leave-one-out CV",
+    "n_folds": 15,
+    "train_size": 15,
+    "accuracy_mean": 0.5333,
+    "accuracy_std": 0.4989,
+    "f1_mean": 0.4667,
+    "f1_std": 0.4989,
     "top_features": [
       [
-        "setitimer",
-        0.1412
+        "poll",
+        0.1312
       ],
       [
         "read",
-        0.1398
-      ],
-      [
-        "open",
-        0.1322
-      ],
-      [
-        "stat",
-        0.106
-      ],
-      [
-        "poll",
-        0.1025
+        0.1126
       ],
       [
         "write",
-        0.073
+        0.0985
       ],
       [
-        "rt_sigreturn",
-        0.0408
+        "open",
+        0.0933
       ],
       [
-        "shmctl",
-        0.0392
+        "setitimer",
+        0.0656
       ],
       [
-        "nanosleep",
-        0.0312
+        "close",
+        0.056
       ],
       [
-        "chdir",
-        0.0307
+        "wait4",
+        0.0549
+      ],
+      [
+        "stat",
+        0.0444
+      ],
+      [
+        "lseek",
+        0.0422
+      ],
+      [
+        "mincore",
+        0.0221
       ]
     ]
   },
   {
-    "experiment": "B: x86\u2192ARM (raw features)",
+    "experiment": "B: x86\u2192ARM (raw frequency)",
     "feature": "frequency",
     "train_size": 15,
     "test_size": 20,
@@ -117,65 +110,70 @@
         "mincore",
         0.0221
       ]
-    ]
+    ],
+    "method": "bootstrap CI (n=200)",
+    "accuracy_mean": 0.4843,
+    "accuracy_std": 0.0694,
+    "f1_mean": 0.1783,
+    "f1_std": 0.2604
   },
   {
-    "experiment": "C: x86+ARM\u2192ARM (mixed training)",
+    "experiment": "C: x86+ARM\u2192ARM (mixed, stratified split)",
     "feature": "frequency",
     "train_size": 25,
     "test_size": 10,
-    "accuracy": 0.0,
-    "f1": 0.0,
+    "accuracy": 0.5,
+    "f1": 0.6154,
     "confusion_matrix": [
       [
-        0,
-        0
+        1,
+        4
       ],
       [
-        10,
-        0
+        1,
+        4
       ]
     ],
     "top_features": [
       [
-        "close",
-        0.1306
+        "poll",
+        0.0727
       ],
       [
         "open",
-        0.0839
-      ],
-      [
-        "poll",
-        0.0743
-      ],
-      [
-        "read",
-        0.056
-      ],
-      [
-        "write",
-        0.0523
-      ],
-      [
-        "brk",
-        0.0489
-      ],
-      [
-        "ioctl",
-        0.0377
+        0.0623
       ],
       [
         "stat",
-        0.0362
+        0.0507
       ],
       [
-        "set_robust_list",
-        0.0355
+        "lseek",
+        0.0502
       ],
       [
-        "getrandom",
+        "read",
+        0.0487
+      ],
+      [
+        "write",
+        0.0445
+      ],
+      [
+        "close",
+        0.0439
+      ],
+      [
+        "ioctl",
+        0.0333
+      ],
+      [
+        "setitimer",
         0.0331
+      ],
+      [
+        "getppid",
+        0.0291
       ]
     ]
   },
@@ -184,51 +182,236 @@
     "feature": "normalized",
     "train_size": 15,
     "test_size": 20,
-    "accuracy": 0.65,
-    "f1": 0.5333,
+    "accuracy": 0.55,
+    "f1": 0.5263,
     "confusion_matrix": [
-      [
-        9,
-        1
-      ],
       [
         6,
         4
+      ],
+      [
+        5,
+        5
       ]
     ],
     "top_features": [
       [
         "ipc",
-        0.2948
+        0.2854
       ],
       [
         "file_io",
-        0.2341
-      ],
-      [
-        "other",
-        0.1629
-      ],
-      [
-        "memory",
-        0.1232
+        0.2538
       ],
       [
         "timing",
-        0.0831
+        0.1795
+      ],
+      [
+        "memory",
+        0.1162
+      ],
+      [
+        "other",
+        0.0645
       ],
       [
         "process",
-        0.0577
-      ],
-      [
-        "network",
-        0.0279
+        0.0505
       ],
       [
         "privilege",
-        0.0162
+        0.0261
+      ],
+      [
+        "network",
+        0.024
       ]
+    ],
+    "method": "bootstrap CI (n=200)",
+    "accuracy_mean": 0.4798,
+    "accuracy_std": 0.0575,
+    "f1_mean": 0.3893,
+    "f1_std": 0.2145
+  },
+  {
+    "experiment": "E: x86\u2192ARM (bigram/ngram2)",
+    "feature": "ngram2",
+    "train_size": 15,
+    "test_size": 20,
+    "accuracy": 0.45,
+    "f1": 0.3529,
+    "confusion_matrix": [
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "top_features": [
+      [
+        "read_write",
+        0.0563
+      ],
+      [
+        "read_open",
+        0.0514
+      ],
+      [
+        "poll_poll",
+        0.0455
+      ],
+      [
+        "poll_read",
+        0.0438
+      ],
+      [
+        "open_write",
+        0.0425
+      ],
+      [
+        "read_read",
+        0.0395
+      ],
+      [
+        "open_read",
+        0.0374
+      ],
+      [
+        "poll_open",
+        0.0344
+      ],
+      [
+        "close_write",
+        0.0323
+      ],
+      [
+        "open_open",
+        0.0283
+      ]
+    ],
+    "method": "bootstrap CI (n=200)",
+    "accuracy_mean": 0.4925,
+    "accuracy_std": 0.0567,
+    "f1_mean": 0.321,
+    "f1_std": 0.3014
+  },
+  {
+    "experiment": "F: x86\u2192ARM (Markov transition)",
+    "feature": "transition",
+    "train_size": 15,
+    "test_size": 20,
+    "accuracy": 0.5,
+    "f1": 0.6667,
+    "confusion_matrix": [
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "top_features": [
+      [
+        "file_io->ipc",
+        0.1726
+      ],
+      [
+        "file_io->file_io",
+        0.13
+      ],
+      [
+        "ipc->ipc",
+        0.0894
+      ],
+      [
+        "timing->ipc",
+        0.0883
+      ],
+      [
+        "memory->file_io",
+        0.0739
+      ],
+      [
+        "ipc->file_io",
+        0.0692
+      ],
+      [
+        "ipc->timing",
+        0.0577
+      ],
+      [
+        "timing->timing",
+        0.0428
+      ],
+      [
+        "memory->memory",
+        0.0324
+      ],
+      [
+        "file_io->memory",
+        0.0283
+      ]
+    ],
+    "method": "bootstrap CI (n=200)",
+    "accuracy_mean": 0.534,
+    "accuracy_std": 0.0547,
+    "f1_mean": 0.6059,
+    "f1_std": 0.1938
+  },
+  {
+    "experiment": "G: early detection curve",
+    "feature": "normalized (first-N)",
+    "train_size": 15,
+    "test_size": 20,
+    "curve": [
+      {
+        "n_syscalls": 50,
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "traces_with_enough_data": 20
+      },
+      {
+        "n_syscalls": 100,
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "traces_with_enough_data": 20
+      },
+      {
+        "n_syscalls": 200,
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "traces_with_enough_data": 19
+      },
+      {
+        "n_syscalls": 500,
+        "accuracy": 0.5,
+        "f1": 0.1667,
+        "traces_with_enough_data": 17
+      },
+      {
+        "n_syscalls": 1000,
+        "accuracy": 0.5,
+        "f1": 0.1667,
+        "traces_with_enough_data": 12
+      },
+      {
+        "n_syscalls": 2000,
+        "accuracy": 0.45,
+        "f1": 0.1538,
+        "traces_with_enough_data": 8
+      },
+      {
+        "n_syscalls": 5000,
+        "accuracy": 0.45,
+        "f1": 0.2667,
+        "traces_with_enough_data": 7
+      }
     ]
   }
 ]

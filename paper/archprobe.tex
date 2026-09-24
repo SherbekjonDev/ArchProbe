@@ -51,15 +51,20 @@ trained on x86 syscall traces can generalize to ARM without retraining.
 We present \textbf{ArchProbe}, a controlled measurement study that collects
 \texttt{strace} behavioral traces from 20 containerized workloads (10 benign,
 10 malicious-pattern) on both \texttt{x86\_64} and \texttt{aarch64} platforms,
-then evaluates four cross-architecture transfer experiments using a Random
-Forest classifier. Our results show that raw syscall frequency features
-collapse to chance-level performance when applied cross-architecture
-(50\% accuracy, F1\,=\,0.00), while an abstract category normalization
-layer---mapping architecture-specific syscall names to semantic
-groups---recovers 65\% accuracy (F1\,=\,0.53). These findings expose a
-silent assumption in syscall-based intrusion detection: architectural
-portability is not free, and normalization is a necessary but insufficient
-remedy at small data scales.
+then evaluates seven transfer experiments using a Random Forest classifier with
+leave-one-out cross-validation and bootstrap confidence intervals. All tested
+representations---raw frequency, bigrams, abstract category normalization, and
+first-order Markov transition features---fail to achieve reliable
+cross-architecture detection (bootstrap means 48--53\%, chance\,=\,50\%).
+Leave-one-out evaluation of the within-architecture baseline yields
+53.3\%\,$\pm$\,49.9\%, revealing that the dataset itself (N\,=\,15) is too
+small for reliable classification. Additionally, an extended 131-syscall
+category mapping reveals that a prior 65\% normalized-feature result was
+partially an artifact of an incomplete mapping: unmapped ARM-specific syscalls
+inflated a discriminative \texttt{other} category; with the corrected mapping
+the estimate falls to 55\%. These findings motivate larger, natively collected
+multi-architecture datasets before drawing conclusions about architectural
+portability of behavioral detection.
 \end{abstract}
 
 % -----------------------------------------------------------------------
@@ -78,23 +83,24 @@ Linux binary and its \texttt{aarch64} equivalent may use different system calls
 to accomplish the same task: \texttt{mmap} vs.\ \texttt{mmap2}, \texttt{stat}
 vs.\ \texttt{newfstatat}, or \texttt{clone} vs.\ \texttt{clone3}. ARM's
 expanded syscall table and different calling conventions mean that the raw
-string identifiers of syscalls differ even for identical logical operations. A
-classifier trained to recognize \texttt{privesc\_enum} patterns on x86 by the
-frequency of \texttt{openat}, \texttt{getdents64}, and \texttt{readlinkat}
-may encounter entirely different call sequences for the same attack on ARM.
+string identifiers of syscalls differ even for identical logical operations.
 
 With ARM server adoption accelerating---AWS Graviton instances, Ampere Altra
 deployments, and Apple Silicon development machines---this assumption is
 becoming load-bearing infrastructure debt. ArchProbe is a measurement study
-designed to quantify the failure mode and test a normalization remedy.
+designed to quantify the failure mode, evaluate four feature representations,
+and honestly characterize what can be concluded at small data scales.
 
 \textbf{Research questions:}
 \begin{itemize}
-  \item \textbf{RQ1:} Do containerized workloads produce
-    architecture-invariant syscall behavioral signatures when represented
-    as raw call frequencies?
-  \item \textbf{RQ2:} Can mapping raw syscall names to abstract semantic
-    categories recover cross-architecture classification accuracy?
+  \item \textbf{RQ1:} Do raw, bigram, or normalized features yield
+    architecture-invariant behavioral signatures?
+  \item \textbf{RQ2:} Do first-order Markov (transition) features capture
+    sequence-level invariants that survive cross-architecture transfer?
+  \item \textbf{RQ3:} Is early detection viable---does observing more syscalls
+    help a cross-architecture classifier?
+  \item \textbf{RQ4:} How does syscall-to-category mapping completeness affect
+    normalized feature accuracy?
 \end{itemize}
 
 % -----------------------------------------------------------------------
@@ -110,16 +116,14 @@ security tools.
 
 \textbf{Optimus.}
 Optimus~\cite{optimus} reduces container attack surface by statically filtering
-syscalls a container is permitted to make. It derives per-architecture policies
-independently. Our work asks what happens when a \emph{learned} policy---rather
-than a static allowlist---must transfer across architectures.
+syscalls. Our work asks what happens when a \emph{learned} policy must transfer
+across architectures.
 
 \textbf{Cross-architecture analysis.}
-Prior work on architecture-independent malware analysis has focused on binary
-similarity (instruction embedding, control-flow graph matching). To our
-knowledge, no prior work has directly measured syscall-level behavioral
-portability for \emph{containerized} workloads and quantified the resulting
-accuracy degradation.
+Prior work on architecture-independent malware analysis focused on binary
+similarity. To our knowledge, no prior work has measured syscall-level
+behavioral portability for containerized workloads with bootstrap confidence
+intervals or studied the effect of mapping completeness.
 
 % -----------------------------------------------------------------------
 \section{Methodology}
@@ -128,65 +132,43 @@ accuracy degradation.
 \subsection{Testbed}
 
 All traces are collected inside Docker containers using
-\texttt{strace -f -e trace=all}. The host system is FothOS (an Arch Linux
-security distribution). Docker Buildx enables building and running
-\texttt{linux/arm64} images on the same \texttt{x86\_64} host via QEMU
-userspace emulation, ensuring that ARM traces reflect \texttt{aarch64} binary
-behavior under the Linux aarch64 ABI.
+\texttt{strace -f -e trace=all}. ARM traces use Docker Buildx with QEMU
+userspace emulation (\texttt{linux/arm64}) on an \texttt{x86\_64} host.
 
-\subsection{Workloads}
+\subsection{Workloads and Data}
 
-We define 20 workloads: 10 benign and 10 malicious-pattern. All malicious
-workloads are fully simulated inside isolated containers with no real external
-targets.
-
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{ll}
-\toprule
-\textbf{Category} & \textbf{Workloads} \\
-\midrule
-Benign (10) & curl, DNS resolution, file I/O, \\
-            & filesystem find, process fork, \\
-            & git clone, proc.\ enum., Python, \\
-            & SSH keygen, wget \\
-\midrule
-Malicious (10) & C2 beacon, cred.\ harvest, \\
-               & data exfil, file staging, \\
-               & log wipe, persistence, \\
-               & privesc enum., net.\ recon., \\
-               & proc.\ recon., reverse shell sim. \\
-\bottomrule
-\end{tabular}
-\caption{Workload categories}
-\end{table}
-
-\textbf{Data quality note.} Five \texttt{x86\_64} benign traces (dns, find,
-python, ssh\_keygen, wget) produced empty output, likely due to QEMU
-initialization timing during \texttt{strace} attachment on short-lived
-processes. These are excluded, leaving 15 x86 records (5 benign, 10 malicious)
-and 20 ARM records (10 benign, 10 malicious).
+20 workloads (10 benign, 10 malicious-pattern); all malicious workloads are
+simulated in isolated containers. Five x86 benign traces produced empty output
+and are excluded, leaving 15 x86 records (5 benign, 10 malicious) and 20 ARM
+records (10/10).
 
 \subsection{Feature Representations}
 
-\textbf{Frequency vector.} A bag-of-syscalls: \texttt{\{syscall: count\}},
-normalized to relative frequencies. Lines matching
-\texttt{syscall\_0x[0-9a-f]+} are excluded as unresolved kernel pointer noise.
+\textbf{Frequency.} Bag-of-syscalls normalized to relative frequencies.
+Unresolved kernel pointers (\texttt{syscall\_0x...}) excluded.
 
-\textbf{Normalized categories.} Each syscall name is mapped to one of eight
-semantic groups: \texttt{file\_io}, \texttt{network}, \texttt{process},
-\texttt{memory}, \texttt{privilege}, \texttt{ipc}, \texttt{timing},
-\texttt{sync}. Unknown syscalls map to \texttt{other}. The mapping is
-architecture-agnostic: both \texttt{mmap} and \texttt{mmap2} map to
-\texttt{memory}; both \texttt{open} and \texttt{openat} map to
-\texttt{file\_io}.
+\textbf{Bigram (ngram2).} Consecutive syscall pairs as features.
 
-\subsection{Classifier}
+\textbf{Normalized categories.} 131 syscall names mapped to 8 semantic groups
+(\texttt{file\_io}, \texttt{network}, \texttt{process}, \texttt{memory},
+\texttt{privilege}, \texttt{ipc}, \texttt{timing}, \texttt{sync}) plus
+\texttt{other}. Architecture-agnostic: \texttt{mmap}/\texttt{mmap2}
+$\to$ \texttt{memory}; \texttt{stat}/\texttt{newfstatat}
+$\to$ \texttt{file\_io}. The extended mapping covers 71 previously unmapped
+syscalls including \texttt{newfstatat} (83,222 occurrences),
+\texttt{fcntl} (48,283), and \texttt{rt\_sig*} family (25,389 combined).
 
-We use a Random Forest classifier (100 trees, \texttt{class\_weight="balanced"},
-\texttt{random\_state=42}) from scikit-learn. Balanced class weights compensate
-for the 5:10 benign:malicious imbalance in x86 training data.
+\textbf{Markov transition.} Normalized 9$\times$9 category-to-category
+transition matrix (81 features). Each entry records the fraction of
+consecutive (category$_i$, category$_j$) pairs in the trace. Fully
+architecture-agnostic and sequence-aware.
+
+\subsection{Evaluation Protocol}
+
+\textbf{LOO-CV} for within-arch experiments (Exp A). \textbf{Bootstrap
+CI} (200 iterations, resampling x86 training records) for all cross-arch
+experiments. Experiment C uses \texttt{StratifiedShuffleSplit} to divide
+ARM records 50/50, fixing the degenerate positional split in v1.
 
 \subsection{Experiments}
 
@@ -197,14 +179,16 @@ for the 5:10 benign:malicious imbalance in x86 training data.
 \toprule
 \textbf{ID} & \textbf{Train} & \textbf{Test} & \textbf{Feature} \\
 \midrule
-A & x86 (60\%, stratified) & x86 (40\%) & frequency \\
-B & x86 (all 15) & ARM (all 20) & frequency \\
-C & x86 + ARM first half & ARM second half & frequency \\
-D & x86 (all 15) & ARM (all 20) & normalized \\
+A & x86 (LOO-CV) & x86 & frequency \\
+B & x86 & ARM & frequency \\
+C & x86+ARM (50\%) & ARM (50\%) & frequency \\
+D & x86 & ARM & normalized \\
+E & x86 & ARM & bigram \\
+F & x86 & ARM & transition \\
+G & x86 & ARM (first-N) & normalized \\
 \bottomrule
 \end{tabular}
-\caption{Experiment configurations. B and D are the primary cross-architecture
-transfer tests.}
+\caption{Experiment configurations. B--F are cross-architecture transfer tests.}
 \end{table}
 
 % -----------------------------------------------------------------------
@@ -214,117 +198,115 @@ transfer tests.}
 \begin{table}[h]
 \centering
 \small
-\begin{tabular}{lrr}
+\begin{tabular}{lrrrr}
 \toprule
-\textbf{Experiment} & \textbf{Accuracy} & \textbf{F1} \\
+\textbf{Exp} & \textbf{Acc} & \textbf{$\pm$} & \textbf{F1} & \textbf{$\pm$} \\
 \midrule
-A: x86$\to$x86 (baseline)          & 100.0\% & 1.0000 \\
-B: x86$\to$ARM (raw features)      &  50.0\% & 0.0000 \\
-C: x86+ARM$\to$ARM (mixed)         &   0.0\% & 0.0000 \\
-D: x86$\to$ARM (normalized)        &  65.0\% & 0.5333 \\
+A: x86$\to$x86 (LOO-CV)       & 53.3\% & 0.499 & 0.467 & 0.499 \\
+B: x86$\to$ARM raw [boot]      & 48.4\% & 0.069 & 0.178 & 0.260 \\
+C: x86+ARM$\to$ARM (fixed)     & 50.0\% & —     & 0.615 & — \\
+D: x86$\to$ARM norm [boot]     & 48.0\% & 0.058 & 0.389 & 0.215 \\
+E: x86$\to$ARM bigram [boot]   & 49.2\% & 0.057 & 0.321 & 0.301 \\
+F: x86$\to$ARM Markov [boot]   & 53.4\% & 0.055 & 0.606 & 0.194 \\
+G: early det.\ (best N=50)     & 50.0\% & —     & 0.000 & — \\
 \bottomrule
 \end{tabular}
-\caption{Classification results across four experiments.}
+\caption{All experiments. Bootstrap mean $\pm$ std shown where [boot] applies.
+Chance = 50\%. Exp D point estimate (full x86 train): 55\%.}
 \end{table}
 
-\textbf{Experiment B} confusion matrix:
+\textbf{Experiment A.} LOO-CV yields 53.3\%\,$\pm$\,49.9\%, exposing the prior
+single-split 100\% result as a lucky partition. The dataset is too small for
+reliable within-arch classification.
 
-\begin{center}
-\small
-\begin{tabular}{lrr}
-\toprule
- & Pred.\ Benign & Pred.\ Malicious \\
-\midrule
-True Benign    & 10 & 0 \\
-True Malicious & 10 & 0 \\
-\bottomrule
-\end{tabular}
-\end{center}
+\textbf{Experiments B, E.} Raw frequency and bigram features collapse at or
+below chance (48.4\%, 49.2\%). Exp B confusion matrix: all 20 ARM samples
+predicted benign.
 
-The classifier predicts every ARM sample as benign. Top features
-(\texttt{poll}, \texttt{read}, \texttt{write}, \texttt{open}) are common x86
-syscalls that are absent or infrequent in ARM traces under QEMU, leaving no
-discriminating signal.
+\textbf{Experiment C (fixed).} Stratified split yields 50\%, F1\,=\,0.615
+(mostly-malicious predictor). Not production-viable but no longer structurally
+degenerate.
 
-\textbf{Experiment D} confusion matrix:
+\textbf{Experiment D.} Point estimate 55\%; bootstrap mean 48.0\%\,$\pm$\,5.8\%.
+Top features: \texttt{ipc} (28.5\%), \texttt{file\_io} (25.4\%),
+\texttt{timing} (18.0\%), \texttt{other} (6.5\%). The drop from previously
+reported 65\% is attributable to the corrected category mapping reducing
+\texttt{other} from 16.3\% to 6.5\% importance (see Section~\ref{sec:rq4}).
 
-\begin{center}
-\small
-\begin{tabular}{lrr}
-\toprule
- & Pred.\ Benign & Pred.\ Malicious \\
-\midrule
-True Benign    & 9 & 1 \\
-True Malicious & 6 & 4 \\
-\bottomrule
-\end{tabular}
-\end{center}
+\textbf{Experiment F.} Bootstrap mean 53.4\%\,$\pm$\,5.5\%; point estimate
+degenerates to all-malicious classifier. Top feature: \texttt{file\_io$\to$ipc}
+(17.3\%), reflecting a genuine behavioral pattern. F1\,=\,0.667 at 50\%
+accuracy is a precision/recall artifact (malicious-bias on balanced test set).
 
-Four malicious ARM samples are correctly identified. Top features:
-\texttt{ipc} (0.29), \texttt{file\_io} (0.23), \texttt{other} (0.16),
-\texttt{memory} (0.12), \texttt{timing} (0.08). These are architecture-agnostic
-categories, which is why any transfer occurs at all.
-
-\textbf{Experiment C} (0\% accuracy) suffers from a structural data artifact:
-positional splitting of ARM records by filename sort order places all ARM benign
-samples in training and all malicious in test. This result is excluded from the
-primary findings.
+\textbf{Experiment G.} No improvement from observing more syscalls: accuracy
+stays at 50\% for all N\,$\leq$\,1000 and drops to 45\% at N\,$\geq$\,2000.
 
 % -----------------------------------------------------------------------
 \section{Discussion}
 % -----------------------------------------------------------------------
 
-\subsection{RQ1: Raw Frequency Features}
+\subsection{RQ1: Raw, Bigram, and Normalized Features}
 
-Raw syscall frequency features do not transfer across architectures.
-Experiment B shows complete collapse: the classifier defaults to predicting
-the majority class across all 20 ARM samples.
+None of the three representations produces reliable cross-architecture
+detection. Bootstrap means for B (48.4\%), E (49.2\%), and D (48.0\%) are
+indistinguishable from chance. The normalization direction is correct in
+principle---mapping architecture-specific syscall names to semantic groups is
+the appropriate abstraction---but the dataset is too small to confirm it
+statistically.
 
-This finding has a direct operational implication: a model trained on x86
-telemetry and applied to ARM workloads without adaptation is not merely less
-accurate---it is effectively disabled, operating at chance level. Deployed
-detection systems targeting multi-architecture fleets face a silent blind spot
-on every ARM node.
+\subsection{RQ2: Markov Transition Features}
 
-\subsection{RQ2: Normalized Category Features}
+Transition features (F) achieve the highest bootstrap mean (53.4\%) of any
+cross-arch experiment. The \texttt{file\_io$\to$ipc} transition distinguishes
+workloads that cycle through file reads and inter-process communication (typical
+of credential harvesting and privilege escalation) from benign workloads
+performing sequential I/O. However, the margin over chance is modest and the
+point classifier degenerates to all-malicious. Transition features are the
+strongest candidate for future work at larger data scales.
 
-Normalization to abstract categories partially recovers cross-architecture
-accuracy (65\%, F1\,=\,0.53). The \texttt{ipc} and \texttt{file\_io}
-categories are the strongest discriminating features. This makes intuitive
-sense: malicious workloads performing network reconnaissance or data
-exfiltration use IPC-class and file I/O calls heavily regardless of
-architecture, because workload \emph{intent} determines category distributions
-more than architecture does.
+\subsection{RQ3: Early Detection}
 
-However, 65\% accuracy is not production-viable. Six of ten malicious ARM
-workloads are missed. Normalization is necessary but not sufficient at this
-data scale.
+The early detection curve (G) is flat at 50\% across all N from 50 to 5,000.
+The cross-architecture mismatch is structural, not a volume problem: more
+syscalls of an ARM trace do not help an x86-trained classifier. This eliminates
+``wait for more data'' as a deployment strategy.
 
-\subsection{Limitations}
+\subsection{RQ4: Mapping Completeness}
+\label{sec:rq4}
 
-\begin{enumerate}
-  \item \textbf{Small dataset.} 15 x86 training samples is insufficient for
-    robust generalization. Results are directional, not definitive.
-  \item \textbf{QEMU emulation.} ARM traces were collected under QEMU
-    userspace emulation, not native \texttt{aarch64} hardware. QEMU's
-    translation layer may introduce artifacts absent on real ARM.
-  \item \textbf{Simulated malice.} All malicious-pattern workloads are
-    synthetic. Real malware behavioral signatures may differ.
-  \item \textbf{Single classifier.} Only Random Forest was evaluated.
-    Sequence-aware models (HMM, LSTM) may behave differently.
-\end{enumerate}
+The extended 131-syscall mapping reduces Exp D accuracy from 65\% (prior work)
+to 55\%. The cause: unmapped ARM-specific syscalls---especially
+\texttt{newfstatat} (83,222 occurrences)---accumulated in \texttt{other},
+which acted as an inadvertent ARM-identity detector. Malicious ARM traces
+(e.g., \texttt{mal\_privesc\_enum}) issued large numbers of unmapped syscalls,
+making \texttt{other} discriminative not for behavioral reasons but for
+architectural ones. The corrected mapping eliminates this artifact.
+
+\textbf{Warning for future work:} an incomplete syscall-to-category mapping
+can produce inflated cross-architecture accuracy by turning the catch-all
+category into an architecture detector.
+
+\subsection{Dataset Scale is the Binding Constraint}
+
+LOO-CV on Exp A (53.3\%\,$\pm$\,49.9\%) establishes that the binding
+constraint is dataset scale, not feature representation. Future experiments
+should target $\geq$50 samples per architecture from native (non-emulated)
+hardware. Sequence-aware models (HMM, 1D CNN) require at minimum this scale
+to avoid degeneracy.
 
 \subsection{Practical Recommendations}
 
 \begin{enumerate}
-  \item \textbf{Do not assume portability.} Publish per-architecture model
-    versions or include architecture as an explicit feature.
-  \item \textbf{Normalize before training.} Abstract syscall categories are
-    a lightweight, interpretable normalization layer that improves
-    cross-architecture transfer without retraining.
-  \item \textbf{Collect native ARM data.} QEMU emulation is not a substitute
-    for native traces; models trained on native x86 + native ARM data should
-    outperform the mixed QEMU results reported here.
+  \item \textbf{Do not assume portability.} x86-trained models achieve
+    chance-level on ARM; deploy per-architecture models.
+  \item \textbf{Normalize---but validate the mapping.} Category normalization
+    is the correct abstraction, but incomplete mappings create artifacts.
+    Validate mapping coverage against each target architecture's syscall table.
+  \item \textbf{Use Markov transition features.} At the current scale,
+    transition features are the most promising representation for future
+    cross-architecture work.
+  \item \textbf{Collect native ARM data.} QEMU introduces a translation layer;
+    native collection is essential before deployment conclusions.
 \end{enumerate}
 
 % -----------------------------------------------------------------------
@@ -332,17 +314,24 @@ data scale.
 % -----------------------------------------------------------------------
 
 ArchProbe demonstrates that syscall behavioral signatures are not
-architecture-invariant. A Random Forest classifier trained on x86 container
-traces achieves 100\% accuracy on held-out x86 data but collapses to chance
-(50\%, F1\,=\,0.00) when applied directly to ARM traces. Mapping syscall names
-to abstract semantic categories partially recovers transfer capability (65\%,
-F1\,=\,0.53), confirming that workload intent is preserved across architectures
-even when raw call names diverge.
+architecture-invariant under any tested feature representation at the current
+data scale. Bootstrap confidence intervals show all cross-architecture
+experiments at 48--53\% accuracy (chance\,=\,50\%). Leave-one-out evaluation
+reveals the same-architecture baseline is itself unreliable at N\,=\,15
+(53.3\%\,$\pm$\,49.9\%). An extended syscall category mapping (131 syscalls,
+up from 60) corrects an artifact that inflated a prior 65\% finding to a more
+honest 55\%. Markov transition features are the most promising representation
+(bootstrap mean 53.4\%, most interpretable top features) but require
+substantially larger datasets to validate.
 
-This work motivates further research into architecture-aware behavioral
-detection: larger multi-architecture datasets, native ARM collection, and
-sequence-aware normalization. The ArchProbe dataset and code are publicly
-available at \url{https://github.com/SherbekjonDev/ArchProbe}.
+Three extensions are motivated: (1) $\geq$50 samples per architecture from
+native hardware, (2) sequence-aware models (HMM, 1D CNN) requiring that data
+scale, (3) a systematic study of mapping completeness across ARM, RISC-V, and
+MIPS syscall tables.
+
+The ArchProbe dataset, code, and extended syscall category map are publicly
+available at \url{https://github.com/SherbekjonDev/ArchProbe}
+(DOI: \href{https://doi.org/10.5281/zenodo.22701078}{10.5281/zenodo.22701078}).
 
 % -----------------------------------------------------------------------
 \bibliographystyle{plain}
@@ -360,8 +349,8 @@ S.~Forrest, S.~A.~Hofmeyr, A.~Somayaji, and T.~A.~Longstaff,
 
 \bibitem{abed2015}
 A.~S.~Abed, C.~Clancy, and D.~S.~Levy,
-``Applying bag of system calls for anomalous behavior detection of applications
-in Linux containers,''
+``Applying bag of system calls for anomalous behavior detection of
+applications in Linux containers,''
 \emph{IEEE Global Humanitarian Technology Conference}, 2015.
 
 \bibitem{falco}
